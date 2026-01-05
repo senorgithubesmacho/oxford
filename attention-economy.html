@@ -1,0 +1,1910 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+<title>Attention Economy</title>
+<meta name="robots" content="max-image-preview:large">
+<meta name="generator" content="sitely.app 6.0.6">
+<style>.anim{visibility:hidden}</style>
+<style>html,body{-webkit-text-zoom:reset !important}@font-face{font-display:block;font-family:"Bebas Neue";src:url('css/BebasNeue-Regular.woff2') format('woff2'),url('css/BebasNeue-Regular.woff') format('woff');font-weight:400}body>div{font-size:0}p,span,h1,h2,h3,h4,h5,h6,a,li,button{margin:0;word-spacing:normal;word-wrap:break-word;-ms-word-wrap:break-word;pointer-events:auto;-ms-text-size-adjust:none !important;-moz-text-size-adjust:none !important;-webkit-text-size-adjust:none !important;text-size-adjust:none !important;max-height:10000000px}sup{font-size:inherit;vertical-align:baseline;position:relative;top:-0.4em}sub{font-size:inherit;vertical-align:baseline;position:relative;top:0.4em}ul{display:block;word-spacing:normal;word-wrap:break-word;line-break:normal;list-style-type:none;padding:0;margin:0;-moz-padding-start:0;-khtml-padding-start:0;-webkit-padding-start:0;-o-padding-start:0;-padding-start:0;-webkit-margin-before:0;-webkit-margin-after:0}li{display:block;white-space:normal}[data-marker]::before{content:attr(data-marker) ' ';-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none;text-wrap:nowrap}li p, .slc{-webkit-touch-callout:none;-webkit-user-select:none;-khtml-user-select:none;-moz-user-select:none;-ms-user-select:none;-o-user-select:none;user-select:none}form{display:inline-block}a{text-decoration:inherit;color:inherit;-webkit-tap-highlight-color:rgba(0,0,0,0)}textarea{resize:none}.shm-l{float:left;clear:left}.shm-r{float:right;clear:right;shape-outside:content-box}.btf{display:none}.plyr{min-width:0 !important}html{font-family:sans-serif}body{font-size:0;margin:0;--z:1;zoom:var(--z)}audio,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background:0 0}b,strong{font-weight:700}dfn{font-style:italic}h1,h2,h3,h4,h5,h6{font-size:1em;line-height:1;margin:0}img{border:0}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible;background:none;border:0;padding:0;text-align:inherit;align-items:initial;padding-block-start:0;padding-block-end:0;padding-inline-start:0}button,select{text-transform:none}button,html input[type=button],input[type=submit]{-webkit-appearance:button;cursor:pointer;box-sizing:border-box;white-space:normal}input[type=text],input[type=password],input[type=email],input[type=date],input[type=number],textarea{-webkit-appearance:none;appearance:none;box-sizing:border-box}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}textarea{overflow:auto;box-sizing:border-box;border-color:#ddd}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}blockquote{margin-block-start:0;margin-block-end:0;margin-inline-start:0;margin-inline-end:0}:-webkit-full-screen-ancestor:not(iframe){-webkit-clip-path:initial!important}
+html{-webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale}.menu-content{cursor:pointer;position:relative}li{-webkit-tap-highlight-color:rgba(0,0,0,0)}
+@-webkit-keyframes rotateIn{from{-webkit-transform-origin:center;-webkit-transform:rotate3d(0,0,1,-200deg);opacity:0}to{-webkit-transform-origin:center;-webkit-transform:translate3d(0, 0, 0);opacity:1}}@keyframes rotateIn{from{transform-origin:center;transform:rotate3d(0,0,1,-200deg);opacity:0}to{transform-origin:center;transform:translate3d(0, 0, 0);opacity:1}}.rotateIn{-webkit-animation-name:rotateIn;animation-name:rotateIn}
+.animated{-webkit-animation-fill-mode:both;animation-fill-mode:both}.animated.infinite{-webkit-animation-iteration-count:infinite;animation-iteration-count:infinite}#b{background-color:#fff}.v128{display:block}.c86{position:relative;pointer-events:none;min-width:1200px;width:100%;overflow:hidden;margin-top:72px;z-index:8;min-height:258px}.ps228{position:relative;margin-top:0}.s371{width:100%;min-width:1200px;height:108px;padding-bottom:0}.c87{border:0;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background-color:transparent}.ps229{display:inline-block;width:0;height:0}.ps230{position:relative;margin-top:27px}.v129{display:block;pointer-events:none}.s372{width:1200px;margin-left:auto;margin-right:auto;min-height:54px}.v130{display:inline-block;vertical-align:top;pointer-events:auto;overflow:visible}.ps231{position:relative;margin-left:263px;margin-top:0}.s373{min-width:850px;width:850px;height:54px}.v131{display:inline-block;vertical-align:top}.ps232{position:relative;margin-left:0;margin-top:0}.s374{min-width:850px;width:850px;min-height:54px;height:54px}.m10{padding:0px 0px 0px 0px}.s375{min-width:71px;width:71px;height:54px;box-shadow:0 2px 4px rgba(0,0,0,0.4);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.mcv10{display:inline-block}.v132{display:inline-block;vertical-align:top;pointer-events:none}.s376{min-width:69px;width:69px;min-height:52px}.c88{border-top:1px dotted #000;border-right:1px dotted #677a85;border-bottom:1px dotted #677a85;border-left:1px dotted #677a85;background-clip:padding-box;-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px;background-color:#fff}.v133{display:inline-block;vertical-align:top;pointer-events:auto}.ps233{position:relative;margin-left:0;margin-top:16px}.s377{min-width:69px;width:69px;overflow:hidden;height:20px}.p16{direction:rtl;text-indent:0;padding-bottom:0;padding-right:0;text-align:center}.f62{font-family:"Bebas Neue";font-size:18px;font-size:calc(18px * var(--f));line-height:1.112;font-weight:400;font-style:normal;text-decoration:none;text-transform:none;letter-spacing:2.61px;color:#000;background-color:initial;text-shadow:none}.ps234{position:relative;margin-left:88px;margin-top:-54px}.s378{min-width:158px;width:158px;height:54px;box-shadow:0 2px 4px rgba(0,0,0,0.4);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.s379{min-width:156px;width:156px;min-height:52px}.s380{min-width:156px;width:156px;overflow:hidden;height:20px}.v134{display:none}.ps235{position:relative;margin-left:-92px;margin-top:0}.s381{min-width:250px;width:250px;min-height:168px;height:168px}.z51{z-index:9999}.s382{min-width:250px;width:250px;height:50px}.s383{min-width:248px;width:248px;min-height:48px}.c90{border:1px dotted #000;background-clip:padding-box;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;background-color:#f2f600}.ps236{position:relative;margin-left:0;margin-top:14px}.s384{min-width:248px;width:248px;overflow:hidden;height:20px}.ps237{position:relative;margin-left:0;margin-top:9px}.ps238{position:relative;margin-left:264px;margin-top:-54px}.s385{min-width:148px;width:148px;height:54px;box-shadow:0 2px 4px rgba(0,0,0,0.4);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.s386{min-width:146px;width:146px;min-height:52px}.s387{min-width:146px;width:146px;overflow:hidden;height:20px}.v135{display:block}.ps239{position:relative;margin-left:429px;margin-top:-54px}.s388{min-width:204px;width:204px;height:54px;box-shadow:0 2px 4px rgba(0,0,0,0.4);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.v136{display:inline-block;vertical-align:top;pointer-events:none}.s389{min-width:202px;width:202px;min-height:52px}.v137{display:inline-block;vertical-align:top;pointer-events:auto}.ps240{position:relative;margin-left:0;margin-top:16px}.s390{min-width:202px;width:202px;overflow:hidden;height:20px}.f63{font-family:"Bebas Neue";font-size:18px;font-size:calc(18px * var(--f));line-height:1.112;font-weight:400;font-style:normal;text-decoration:none;text-transform:none;letter-spacing:2.61px;color:#000;background-color:initial;text-shadow:none}.v138{display:block}.ps241{position:relative;margin-left:651px;margin-top:-54px}.s391{min-width:198px;width:198px;height:54px;box-shadow:0 2px 4px rgba(0,0,0,0.4);-webkit-border-radius:4px;-moz-border-radius:4px;border-radius:4px}.v139{display:inline-block;vertical-align:top;pointer-events:none}.s392{min-width:196px;width:196px;min-height:52px}.v140{display:inline-block;vertical-align:top;pointer-events:auto}.ps242{position:relative;margin-left:0;margin-top:16px}.s393{min-width:196px;width:196px;overflow:hidden;height:20px}.f64{font-family:"Bebas Neue";font-size:18px;font-size:calc(18px * var(--f));line-height:1.112;font-weight:400;font-style:normal;text-decoration:none;text-transform:none;letter-spacing:2.61px;color:#000;background-color:initial;text-shadow:none}.ps243{position:relative;margin-left:-52px;margin-top:0}.s394{min-width:250px;width:250px;min-height:168px;height:168px}.s395{min-width:250px;width:250px;height:50px}.s396{min-width:248px;width:248px;min-height:48px}.s397{min-width:248px;width:248px;overflow:hidden;height:20px}.ps244{position:relative;margin-left:0;margin-top:9px}.ps245{position:relative;margin-left:0;margin-top:9px}.s398{min-width:250px;width:250px;height:50px}.s399{min-width:248px;width:248px;min-height:48px}.s400{min-width:248px;width:248px;overflow:hidden;height:20px}.ps246{position:relative;margin-top:-229px}.s401{width:1200px;margin-left:auto;margin-right:auto;min-height:1752px}.ps247{position:relative;margin-left:7px;margin-top:2px}.s402{min-width:91px;width:91px;height:61px}.z52{z-index:7}.v141{display:inline-block;outline:0}.ps248{position:relative}.s403{box-sizing:border-box;width:100%;height:100%;padding-right:0}.c91{-webkit-user-select:none;-moz-user-select:none;user-select:none;color:#000;border:1px solid #677a85;-webkit-border-radius:31px;-moz-border-radius:31px;border-radius:31px;background-color:#f2f600;box-shadow:0 2px 4px rgba(0,0,0,0.4);transition:color 0.21s, border-color 0.21s, background-color 0.21s;transition-timing-function:ease-out}.a11{display:inline-block;width:100%;z-index:1}.f65{font-family:"Bebas Neue";font-size:18px;font-size:calc(18px * var(--f));line-height:0.945;font-weight:400;font-style:normal;text-decoration:none;text-transform:none;letter-spacing:2.50px;text-shadow:none;text-indent:0;padding-right:0;text-align:center;cursor:pointer;padding-top:13px;padding-bottom:12px}.ps249{position:relative;margin-left:7px;margin-top:15px}.s404{min-width:1156px;width:1156px;min-height:339px}.s405{min-width:91px;width:91px;min-height:126px;line-height:0}.s406{min-width:91px;width:91px;height:56px}.z53{z-index:6}.c92{-webkit-user-select:none;-moz-user-select:none;user-select:none;color:#fff;border:1px solid #677a85;-webkit-border-radius:28px;-moz-border-radius:28px;border-radius:28px;background-color:#268bd2;box-shadow:0 2px 4px rgba(0,0,0,0.4);transition:color 0.21s, border-color 0.21s, background-color 0.21s;transition-timing-function:ease-out}.f66{font-family:"Bebas Neue";font-size:18px;font-size:calc(18px * var(--f));line-height:0.834;font-weight:400;font-style:normal;text-decoration:none;text-transform:none;letter-spacing:2.50px;text-shadow:none;text-indent:0;padding-right:0;text-align:center;cursor:pointer;padding-top:20px;padding-bottom:19px}.ps250{position:relative;margin-left:0;margin-top:17px}.s407{min-width:91px;width:91px;height:53px}.z54{z-index:5}.c93{-webkit-user-select:none;-moz-user-select:none;user-select:none;color:#fff;border:1px solid #677a85;-webkit-border-radius:27px;-moz-border-radius:27px;border-radius:27px;background-color:#de7114;box-shadow:0 2px 4px rgba(0,0,0,0.4);transition:color 0.21s, border-color 0.21s, background-color 0.21s;transition-timing-function:ease-out}.f67{font-family:"Bebas Neue";font-size:18px;font-size:calc(18px * var(--f));line-height:0.945;font-weight:400;font-style:normal;text-decoration:none;text-transform:none;letter-spacing:normal;text-shadow:none;text-indent:0;padding-right:0;text-align:center;cursor:pointer;padding-top:9px;padding-bottom:8px}.ps251{position:relative;margin-left:52px;margin-top:1px}.s408{min-width:1013px;width:1013px;min-height:338px;height:338px}.z55{z-index:1}.i1{position:absolute;left:0;width:1013px;top:1px;height:335px;-webkit-border-radius:0;-moz-border-radius:0;border-radius:0;border:0}.ps252{position:relative;margin-left:150px;margin-top:0}.s409{min-width:1015px;width:1015px;min-height:1335px}.wrapper7{font-size:15px;line-height:1.4;min-height:1335px}.wrapper7 div, .wrapper7 p, .wrapper7 a{font-size:15px;line-height:1.4}.wrapper7 input{font-size:15px;line-height:1.4;margin:3px 2px 3px 2px}.c91:hover{background-color:#fff;background-clip:padding-box;border-color:#000}.c91:active{transition:initial;background-color:#52646f;color:#fff}.c92:hover{background-color:#fff;background-clip:padding-box;border-color:#000;color:#000}.c92:active{transition:initial;background-color:#52646f;color:#fff}.c93:hover{background-color:#fff;background-clip:padding-box;border-color:#000;color:#000}.c93:active{transition:initial;background-color:#52646f;color:#fff}body{--d:0;--s:1200}@media (min-width:960px) and (max-width:1199px) {.c86{min-width:960px;margin-top:58px;min-height:206px}.s371{min-width:960px;height:86px}.ps230{margin-top:22px}.s372{width:960px;min-height:43px}.ps231{margin-left:192px}.s373{min-width:720px;width:720px;height:43px}.s374{min-width:719px;width:719px;min-height:43px;height:43px}.s375{min-width:61px;width:61px;height:43px}.s376{min-width:59px;width:59px;min-height:41px}.ps233{margin-top:13px}.s377{min-width:59px;width:59px;height:15px}.f62{font-size:14px;font-size:calc(14px * var(--f));line-height:1.072}.ps234{margin-left:75px;margin-top:-43px}.s378{min-width:135px;width:135px;height:43px}.s379{min-width:133px;width:133px;min-height:41px}.s380{min-width:133px;width:133px;height:15px}.ps235{margin-left:-65px}.s381{min-width:200px;width:200px;min-height:134px;height:134px}.s382{min-width:200px;width:200px;height:40px}.s383{min-width:198px;width:198px;min-height:38px}.ps236{margin-top:11px}.s384{min-width:198px;width:198px;height:15px}.ps237{margin-top:7px}.ps238{margin-left:224px;margin-top:-43px}.s385{min-width:125px;width:125px;height:43px}.s386{min-width:123px;width:123px;min-height:41px}.s387{min-width:123px;width:123px;height:15px}.ps239{margin-left:363px;margin-top:-43px}.s388{min-width:173px;width:173px;height:43px}.s389{min-width:171px;width:171px;min-height:41px}.ps240{margin-top:13px}.s390{min-width:171px;width:171px;height:15px}.f63{font-size:14px;font-size:calc(14px * var(--f));line-height:1.072}.ps241{margin-left:551px;margin-top:-43px}.s391{min-width:168px;width:168px;height:43px}.s392{min-width:166px;width:166px;min-height:41px}.ps242{margin-top:13px}.s393{min-width:166px;width:166px;height:15px}.f64{font-size:14px;font-size:calc(14px * var(--f));line-height:1.072}.ps243{margin-left:-32px}.s394{min-width:200px;width:200px;min-height:134px;height:134px}.s395{min-width:200px;width:200px;height:40px}.s396{min-width:198px;width:198px;min-height:38px}.s397{min-width:198px;width:198px;height:15px}.ps244{margin-top:7px}.ps245{margin-top:7px}.s398{min-width:200px;width:200px;height:40px}.s399{min-width:198px;width:198px;min-height:38px}.s400{min-width:198px;width:198px;height:15px}.ps246{margin-top:-184px}.s401{width:960px;min-height:1402px}.ps247{margin-left:5px}.s402{min-width:73px;width:73px;height:49px}.c91{-webkit-border-radius:25px;-moz-border-radius:25px;border-radius:25px}.f65{font-size:14px;font-size:calc(14px * var(--f));line-height:0.930;padding-top:11px;padding-bottom:10px}.ps249{margin-left:5px;margin-top:12px}.s404{min-width:925px;width:925px;min-height:271px}.s405{min-width:73px;width:73px;min-height:101px}.s406{min-width:73px;width:73px;height:45px}.c92{-webkit-border-radius:23px;-moz-border-radius:23px;border-radius:23px}.f66{font-size:14px;font-size:calc(14px * var(--f));line-height:0.858;padding-top:16px;padding-bottom:15px}.ps250{margin-top:13px}.s407{min-width:73px;width:73px;height:43px}.c93{-webkit-border-radius:22px;-moz-border-radius:22px;border-radius:22px}.f67{font-size:14px;font-size:calc(14px * var(--f));line-height:0.930;padding-top:8px;padding-bottom:7px}.ps251{margin-left:42px}.s408{min-width:810px;width:810px;min-height:270px;height:270px}.i1{width:810px;height:268px}.ps252{margin-left:120px}.s409{min-width:812px;width:812px;min-height:1068px}.wrapper7{min-height:1068px}body{--d:1;--s:960}}@media (min-width:768px) and (max-width:959px) {.c86{min-width:768px;margin-top:46px;min-height:164px}.s371{min-width:768px;height:69px}.ps230{margin-top:17px}.s372{width:768px;min-height:35px}.ps231{margin-left:213px}.s373{min-width:458px;width:458px;height:35px}.s374{min-width:458px;width:458px;min-height:35px;height:35px}.s375{min-width:52px;width:52px;height:35px}.s376{min-width:50px;width:50px;min-height:33px}.ps233{margin-top:10px}.s377{min-width:50px;width:50px;height:12px}.f62{font-size:11px;font-size:calc(11px * var(--f));line-height:1.092}.ps234{margin-left:62px;margin-top:-35px}.s378{min-width:116px;width:116px;height:35px}.s379{min-width:114px;width:114px;min-height:33px}.s380{min-width:114px;width:114px;height:12px}.ps235{margin-left:-44px}.s381{min-width:160px;width:160px;min-height:106px;height:107px}.s382{min-width:160px;width:160px;height:32px}.s383{min-width:158px;width:158px;min-height:30px}.ps236{margin-top:9px}.s384{min-width:158px;width:158px;height:12px}.ps237{margin-top:5px}.ps238{margin-left:189px;margin-top:-35px}.s385{min-width:108px;width:108px;height:35px}.s386{min-width:106px;width:106px;min-height:33px}.s387{min-width:106px;width:106px;height:12px}.ps239{margin-left:308px;margin-top:-35px}.s388{min-width:149px;width:149px;height:35px}.s389{min-width:147px;width:147px;min-height:33px}.ps240{margin-top:10px}.s390{min-width:147px;width:147px;height:12px}.f63{font-size:11px;font-size:calc(11px * var(--f));line-height:1.092}.v138{display:none}.ps241{margin-left:468px;margin-top:-35px}.s391{min-width:165px;width:165px;height:35px}.v139{display:none}.s392{min-width:163px;width:163px;min-height:33px}.v140{display:none}.ps242{margin-top:9px}.s393{min-width:163px;width:163px;height:15px}.f64{font-size:14px;font-size:calc(14px * var(--f));line-height:1.072}.ps243{margin-left:-72px}.s394{min-width:160px;width:160px;min-height:106px;height:107px}.s395{min-width:160px;width:160px;height:32px}.s396{min-width:158px;width:158px;min-height:30px}.s397{min-width:158px;width:158px;height:12px}.ps244{margin-top:37px}.ps245{margin-top:74px}.s398{min-width:160px;width:160px;height:32px}.s399{min-width:158px;width:158px;min-height:30px}.s400{min-width:158px;width:158px;height:12px}.ps246{margin-top:-146px}.s401{width:768px;min-height:1122px}.ps247{margin-left:4px}.s402{min-width:59px;width:59px;height:40px}.c91{-webkit-border-radius:20px;-moz-border-radius:20px;border-radius:20px}.f65{font-size:11px;font-size:calc(11px * var(--f));line-height:1.001;padding-top:8px;padding-bottom:8px}.ps249{margin-left:4px;margin-top:8px}.s404{min-width:740px;width:740px;min-height:217px}.s405{min-width:59px;width:59px;min-height:82px}.s406{min-width:59px;width:59px;height:37px}.c92{-webkit-border-radius:19px;-moz-border-radius:19px;border-radius:19px}.f66{font-size:11px;font-size:calc(11px * var(--f));line-height:0.819;padding-top:13px;padding-bottom:13px}.ps250{margin-top:10px}.s407{min-width:59px;width:59px;height:35px}.c93{-webkit-border-radius:18px;-moz-border-radius:18px;border-radius:18px}.f67{font-size:11px;font-size:calc(11px * var(--f));line-height:1.001;padding-top:6px;padding-bottom:5px}.ps251{margin-left:33px}.s408{min-width:648px;width:648px;min-height:216px;height:216px}.i1{width:648px;height:214px}.ps252{margin-left:96px;margin-top:1px}.s409{min-width:650px;width:650px;min-height:854px}.wrapper7{min-height:854px}body{--d:2;--s:768}}@media (min-width:480px) and (max-width:767px) {.c86{min-width:480px;margin-top:29px;min-height:102px}.s371{min-width:480px;height:43px}.ps230{margin-top:11px}.s372{width:480px;min-height:22px}.ps231{margin-left:105px}.s373{min-width:341px;width:341px;height:22px}.s374{min-width:341px;width:341px;min-height:22px;height:22px}.s375{min-width:37px;width:37px;height:22px}.s376{min-width:35px;width:35px;min-height:20px}.ps233{margin-top:5px}.s377{min-width:35px;width:35px;height:9px}.f62{font-size:7px;font-size:calc(7px * var(--f));line-height:1.144}.ps234{margin-left:44px;margin-top:-22px}.s378{min-width:88px;width:88px;height:22px}.s379{min-width:86px;width:86px;min-height:20px}.s380{min-width:86px;width:86px;height:9px}.ps235{margin-left:-12px}.s381{min-width:100px;width:100px;min-height:66px;height:66px}.s382{min-width:100px;width:100px;height:20px}.s383{min-width:98px;width:98px;min-height:18px}.ps236{margin-top:4px}.s384{min-width:98px;width:98px;height:9px}.ps237{margin-top:3px}.ps238{margin-left:139px;margin-top:-22px}.s385{min-width:80px;width:80px;height:22px}.s386{min-width:78px;width:78px;min-height:20px}.s387{min-width:78px;width:78px;height:9px}.ps239{margin-left:226px;margin-top:-22px}.s388{min-width:114px;width:114px;height:22px}.s389{min-width:112px;width:112px;min-height:20px}.ps240{margin-top:5px}.s390{min-width:112px;width:112px;height:9px}.f63{font-size:7px;font-size:calc(7px * var(--f));line-height:1.144}.v138{display:none}.ps241{margin-left:347px;margin-top:-22px}.s391{min-width:157px;width:157px;height:22px}.v139{display:none}.s392{min-width:155px;width:155px;min-height:20px}.v140{display:none}.ps242{margin-top:2px}.s393{min-width:155px;width:155px;height:15px}.f64{font-size:14px;font-size:calc(14px * var(--f));line-height:1.072}.ps243{margin-left:-6px}.s394{min-width:109px;width:109px;min-height:66px;height:66px}.s395{min-width:107px;width:107px;height:20px}.s396{min-width:105px;width:105px;min-height:18px}.s397{min-width:105px;width:105px;height:9px}.ps244{margin-top:23px}.ps245{margin-top:46px}.s398{min-width:109px;width:109px;height:20px}.s399{min-width:107px;width:107px;min-height:18px}.s400{min-width:107px;width:107px;height:9px}.ps246{margin-top:-92px}.s401{width:480px;min-height:702px}.ps247{margin-left:2px}.s402{min-width:38px;width:38px;height:26px}.c91{-webkit-border-radius:13px;-moz-border-radius:13px;border-radius:13px}.f65{font-size:7px;font-size:calc(7px * var(--f));line-height:1.001;padding-top:5px;padding-bottom:5px}.ps249{margin-left:2px;margin-top:4px}.s404{min-width:463px;width:463px;min-height:136px}.s405{min-width:38px;width:38px;min-height:51px}.s406{min-width:38px;width:38px;height:24px}.c92{-webkit-border-radius:12px;-moz-border-radius:12px;border-radius:12px}.f66{font-size:7px;font-size:calc(7px * var(--f));line-height:0.715;padding-top:6px;padding-bottom:6px}.ps250{margin-top:5px}.s407{min-width:38px;width:38px;height:22px}.c93{-webkit-border-radius:11px;-moz-border-radius:11px;border-radius:11px}.f67{font-size:7px;font-size:calc(7px * var(--f));line-height:1.001;padding-top:3px;padding-bottom:3px}.ps251{margin-left:20px}.s408{min-width:405px;width:405px;min-height:135px;height:135px}.i1{width:405px;top:0;height:134px}.ps252{margin-left:60px}.s409{min-width:406px;width:406px;min-height:534px}.wrapper7{min-height:534px}body{--d:3;--s:480}}@media (max-width:479px) {.c86{min-width:320px;margin-top:19px;min-height:66px}.s371{min-width:320px;height:29px}.ps230{margin-top:8px}.s372{width:320px;min-height:14px}.ps231{margin-left:97px}.s373{min-width:177px;width:177px;height:14px}.s374{min-width:177px;width:177px;min-height:14px;height:14px}.s375{min-width:31px;width:31px;height:14px}.s376{min-width:29px;width:29px;min-height:12px}.ps233{margin-top:3px}.s377{min-width:29px;width:29px;height:5px}.f62{font-size:4px;font-size:calc(4px * var(--f));line-height:1.001}.ps234{margin-left:35px;margin-top:-14px}.s378{min-width:71px;width:71px;height:14px}.s379{min-width:69px;width:69px;min-height:12px}.s380{min-width:69px;width:69px;height:5px}.ps235{margin-left:4px}.s381{min-width:67px;width:67px;min-height:42px;height:42px}.s382{min-width:67px;width:67px;height:13px}.s383{min-width:65px;width:65px;min-height:11px}.ps236{margin-top:3px}.s384{min-width:65px;width:65px;height:5px}.ps237{margin-top:1px}.ps238{margin-left:111px;margin-top:-14px}.s385{min-width:65px;width:65px;height:14px}.s386{min-width:63px;width:63px;min-height:12px}.s387{min-width:63px;width:63px;height:5px}.v135{display:none}.ps239{margin-left:180px;margin-top:-14px}.s388{min-width:113px;width:113px;height:14px}.v136{display:none}.s389{min-width:111px;width:111px;min-height:12px}.v137{display:none}.ps240{margin-top:1px}.s390{min-width:111px;width:111px;height:9px}.f63{font-size:7px;font-size:calc(7px * var(--f));line-height:1.144}.v138{display:none}.ps241{margin-left:180px;margin-top:-14px}.s391{min-width:156px;width:156px;height:17px}.v139{display:none}.s392{min-width:154px;width:154px;min-height:15px}.v140{display:none}.ps242{margin-top:0}.s393{min-width:154px;width:154px;height:15px}.f64{font-size:14px;font-size:calc(14px * var(--f));line-height:1.072}.ps243{margin-left:-38px;margin-top:-4px}.s394{min-width:87px;width:87px;min-height:42px;height:42px}.s395{min-width:85px;width:85px;height:13px}.s396{min-width:83px;width:83px;min-height:11px}.s397{min-width:83px;width:83px;height:5px}.ps244{margin-top:14px}.ps245{margin-top:29px}.s398{min-width:87px;width:87px;height:13px}.s399{min-width:85px;width:85px;min-height:11px}.s400{min-width:85px;width:85px;height:5px}.ps246{margin-top:-60px}.s401{width:320px;min-height:469px}.ps247{margin-left:1px}.s402{min-width:26px;width:26px;height:18px}.c91{-webkit-border-radius:9px;-moz-border-radius:9px;border-radius:9px}.f65{font-size:4px;font-size:calc(4px * var(--f));line-height:1.001;padding-top:4px;padding-bottom:4px}.ps249{margin-left:1px;margin-top:2px}.s404{min-width:309px;width:309px;min-height:91px}.s405{min-width:26px;width:26px;min-height:35px}.s406{min-width:26px;width:26px;height:16px}.c92{-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px}.f66{font-size:4px;font-size:calc(4px * var(--f));line-height:1.001;padding-top:3px;padding-bottom:3px}.ps250{margin-top:3px}.s407{min-width:26px;width:26px;height:16px}.c93{-webkit-border-radius:8px;-moz-border-radius:8px;border-radius:8px}.f67{font-size:4px;font-size:calc(4px * var(--f));line-height:1.001;padding-top:3px;padding-bottom:3px}.ps251{margin-left:13px}.s408{min-width:270px;width:270px;min-height:90px;height:90px}.i1{width:270px;height:89px}.ps252{margin-left:40px}.s409{min-width:271px;width:271px;min-height:356px}.wrapper7{min-height:356px}body{--d:4;--s:320}}</style>
+<meta name="referrer" content="origin-when-cross-origin">
+<link rel="stylesheet" href="css/site.339c38.css" media="print" onload="this.media='all';this.onload=null;">
+<noscript><link rel="stylesheet" href="css/site.339c38.css" type="text/css"></noscript>
+</head>
+<body style="--sw:0px" id="b">
+<script>!function(){var t,e,n=document.body,r=("0"===n.style.getPropertyValue("--sw")&&n.style.setProperty("--sw","0px"),document.createElement("P")),i=(r.innerHTML="&nbsp;",r.style.cssText="position:fixed;visibility:hidden;font-size:100px;zoom:1",r.setAttribute("aria-hidden","true"),n.appendChild(r),t=r,function(){var e=Math.trunc(1e4/parseFloat(window.getComputedStyle(t).getPropertyValue("font-size")))/100;e!=n.style.getPropertyValue("--f")&&n.style.setProperty("--f",e)});"ResizeObserver"in window?new ResizeObserver(i).observe(r):"requestAnimationFrame"in window?(e=function(){i(),requestAnimationFrame(e)},requestAnimationFrame(e)):setInterval(i,100)}();</script>
+
+<script>/firefox/i.test(navigator.userAgent)||!function(){function e(){var e=document.body,t=(e.style.zoom=1,window.innerWidth),r=(e.style.zoom="",getComputedStyle(e)),n=r.getPropertyValue("--s");if(320==n){if(t<320)return;t=Math.min(479,t)}else if(480==n){if(t<480)return;t=Math.min(610,t)}else t=n;(t=Math.trunc(t/n*1e4)/1e4)!=r.getPropertyValue("--z")&&e.style.setProperty("--z",t),n=r.getPropertyValue("min-height"),parseInt(n)&&n!=e.style.getPropertyValue("--lvh")&&e.style.setProperty("--lvh",n)}window.addEventListener?window.addEventListener("resize",e,!0):window.onscroll=e,e()}()</script>
+
+<div data-block-group="0" class="v128 c86">
+<div class="v128 ps228 s371 c87">
+<div class="ps229">
+</div>
+<div class="ps230 v129 s372">
+<div class="v130 ps231 s373">
+<ul class="menu-dropdown-1 v131 ps232 s374 m10" id="m10">
+<li class="v128 ps232 s375">
+<a href="./"><div class="menu-content mcv10"><div class="v132 ps232 s376 c88"><div class="v133 ps233 s377 c89"><p class="p16 f62">Home</p></div></div></div></a>
+</li>
+<li class="v128 ps234 s378">
+<div class="menu-content mcv10">
+<div class="v132 ps232 s379 c88">
+<div class="v133 ps233 s380 c89">
+<p class="p16 f62">OPA TV | YBOOK</p>
+</div>
+</div>
+</div>
+<ul class="menu-dropdown v134 ps235 s381 m10 z51">
+<li class="v128 ps232 s382">
+<a href="opa-tv.html"><div class="menu-content mcv10"><div class="v132 ps232 s383 c90"><div class="v133 ps236 s384 c89"><p class="p16 f62">Schedule</p></div></div></div></a>
+</li>
+<li class="v128 ps237 s382">
+<a href="opa-tv-episode.html"><div class="menu-content mcv10"><div class="v132 ps232 s383 c90"><div class="v133 ps236 s384 c89"><p class="p16 f62">EPISODES</p></div></div></div></a>
+</li>
+<li class="v128 ps237 s382">
+<a href="#"><div class="menu-content mcv10"><div class="v132 ps232 s383 c90"><div class="v133 ps236 s384 c89"><p class="p16 f62">YEARBOOK</p></div></div></div></a>
+</li>
+</ul>
+</li>
+<li class="v128 ps238 s385">
+<a href="student-work.html"><div class="menu-content mcv10"><div class="v132 ps232 s386 c88"><div class="v133 ps233 s387 c89"><p class="p16 f62">Student Work</p></div></div></div></a>
+</li>
+<li class="v135 ps239 s388">
+<a href="student-portfolios.html"><div class="menu-content mcv10"><div class="v136 ps232 s389 c88"><div class="v137 ps240 s390 c89"><p class="p16 f63">Creative Portfolios</p></div></div></div></a>
+</li>
+<li class="v138 ps241 s391">
+<div class="menu-content mcv10">
+<div class="v139 ps232 s392 c88">
+<div class="v140 ps242 s393 c89">
+<p class="p16 f64">Intro Digital Media</p>
+</div>
+</div>
+</div>
+<ul class="menu-dropdown v134 ps243 s394 m10 z51">
+<li class="v128 ps232 s395">
+<a href="project-statement.html"><div class="menu-content mcv10"><div class="v139 ps232 s396 c90"><div class="v140 ps236 s397 c89"><p class="p16 f64">Project Statement</p></div></div></div></a>
+</li>
+<li class="v128 ps244 s395">
+<a href="project-pipeline.html"><div class="menu-content mcv10"><div class="v139 ps232 s396 c90"><div class="v140 ps236 s397 c89"><p class="p16 f64">Project Pipeline</p></div></div></div></a>
+</li>
+<li class="v128 ps245 s398">
+<a href="show-it-phase.html"><div class="menu-content mcv10"><div class="v139 ps232 s399 c90"><div class="v140 ps236 s400 c89"><p class="p16 f64">Project Presentation</p></div></div></div></a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="ps246 v129 s401">
+<div class="anim rotateIn un171 v133 ps247 s402 c89 z52">
+<div class="v141 ps248 s403 c91">
+<a href="https://opatechsupport.freshdesk.com/support/home" class="a11 f65">Tech ticket</a>
+</div>
+</div>
+<div class="v131 ps249 s404">
+<div class="v131 ps232 s405">
+<div class="anim rotateIn un172 v133 ps232 s406 c89 z53">
+<div class="v141 ps248 s403 c92">
+<a href="#" class="a11 f66">Your life</a>
+</div>
+</div>
+<div class="anim rotateIn un173 v133 ps250 s407 c89 z54">
+<div class="v141 ps248 s403 c93">
+<a href="independant-study.html" class="a11 f67">independent study</a>
+</div>
+</div>
+</div>
+<div class="v133 ps251 s408 c89 z55">
+<picture>
+<source srcset="images/p/gemini_generated_image_iwc8nriwc8nriwc8-1--540.webp 2x" type="image/webp" media="(max-width:479px)">
+<source srcset="images/f/gemini_generated_image_iwc8nriwc8nriwc8-1--540.jpg 2x" media="(max-width:479px)">
+<source srcset="images/8/gemini_generated_image_iwc8nriwc8nriwc8-1--810.webp 2x" type="image/webp" media="(max-width:767px)">
+<source srcset="images/9/gemini_generated_image_iwc8nriwc8nriwc8-1--810.jpg 2x" media="(max-width:767px)">
+<source srcset="images/t/gemini_generated_image_iwc8nriwc8nriwc8-1--1296.webp 2x" type="image/webp" media="(max-width:959px)">
+<source srcset="images/p/gemini_generated_image_iwc8nriwc8nriwc8-1--1296.jpg 2x" media="(max-width:959px)">
+<source srcset="images/4/gemini_generated_image_iwc8nriwc8nriwc8-1--810.webp 1x, images/n/gemini_generated_image_iwc8nriwc8nriwc8-1--1620.webp 2x" type="image/webp" media="(max-width:1199px)">
+<source srcset="images/6/gemini_generated_image_iwc8nriwc8nriwc8-1--810.jpg 1x, images/b/gemini_generated_image_iwc8nriwc8nriwc8-1--1620.jpg 2x" media="(max-width:1199px)">
+<source srcset="images/3/gemini_generated_image_iwc8nriwc8nriwc8-1--1013.webp 1x, images/7/gemini_generated_image_iwc8nriwc8nriwc8-1--2026.webp 2x" type="image/webp" media="(min-width:1200px)">
+<source srcset="images/i/gemini_generated_image_iwc8nriwc8nriwc8-1--1013.jpg 1x, images/n/gemini_generated_image_iwc8nriwc8nriwc8-1--2026.jpg 2x" media="(min-width:1200px)">
+<img src="images/n/gemini_generated_image_iwc8nriwc8nriwc8-1--2026.jpg" class="i1">
+</picture>
+</div>
+</div>
+<div class="v133 ps252 s409 c89">
+<div class="wrapper7">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Your Life in 24 Hours</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+    #yl24 {
+      --yl24-bg: #f3f4f6;
+      --yl24-card-bg: #ffffff;
+      --yl24-border: #e5e7eb;
+      --yl24-muted: #6b7280;
+      --yl24-strong: #111827;
+      --yl24-step-blue: #268BD2;
+      --yl24-orange: #DE7114;
+      --yl24-orange-hover: #c95f10;
+      --yl24-radius-lg: 12px;
+      --yl24-radius-md: 8px;
+      --yl24-radius-pill: 999px;
+      --yl24-shadow-soft: 0 10px 25px rgba(15, 23, 42, 0.06);
+      --yl24-shadow-subtle: 0 1px 3px rgba(15, 23, 42, 0.08);
+
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--yl24-strong);
+      max-width: 960px;
+      margin: 0 auto 3rem;
+      padding: 1.5rem 1rem 2.5rem;
+      background: transparent;
+      box-sizing: border-box;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    #yl24 * { box-sizing: border-box; }
+
+    #yl24 h1 {
+      font-size: 26px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 0.35rem;
+    }
+
+    #yl24 h2 {
+      font-size: 16px;
+      font-weight: 700;
+      margin: 0 0 0.35rem;
+    }
+
+    #yl24 h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin: 1rem 0 0.35rem;
+    }
+
+    #yl24 p { margin: 0 0 0.5rem; }
+
+    #yl24 .yl24-small {
+      font-size: 12px;
+      color: var(--yl24-muted);
+    }
+
+    #yl24 .yl24-shell {
+      background: var(--yl24-bg);
+      border-radius: 18px;
+      padding: 1.5rem 1.25rem 1.75rem;
+      box-shadow: var(--yl24-shadow-soft);
+    }
+
+    #yl24 .yl24-card {
+      background: var(--yl24-card-bg);
+      border-radius: var(--yl24-radius-lg);
+      border: 1px solid var(--yl24-border);
+      padding: 1rem 1.25rem 1.1rem;
+      margin-top: 1rem;
+      box-shadow: var(--yl24-shadow-subtle);
+      position: relative;
+    }
+
+    #yl24 .yl24-card-tight { padding-top: 0.8rem; padding-bottom: 0.8rem; }
+
+    #yl24 .yl24-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1rem;
+      margin-top: 1rem;
+      align-items: start;
+    }
+
+    #yl24 .yl24-grid-2 {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1rem;
+    }
+
+    #yl24 .yl24-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin-top: 0.5rem;
+    }
+
+    #yl24 .yl24-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+    }
+
+    #yl24 .yl24-field label {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4b5563;
+    }
+
+    #yl24 input[type="number"],
+    #yl24 input[type="text"],
+    #yl24 select,
+    #yl24 button,
+    #yl24 textarea {
+      font-family: inherit;
+      font-size: 13px;
+    }
+
+    #yl24 input[type="number"],
+    #yl24 input[type="text"],
+    #yl24 select,
+    #yl24 textarea {
+      border-radius: 999px;
+      border: 1px solid var(--yl24-border);
+      padding: 0.35rem 0.7rem;
+      outline: none;
+      min-height: 32px;
+      background: #f9fafb;
+      transition: border-color 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
+    }
+
+    #yl24 input[type="number"]:focus,
+    #yl24 input[type="text"]:focus,
+    #yl24 select:focus,
+    #yl24 textarea:focus {
+      border-color: var(--yl24-step-blue);
+      box-shadow: 0 0 0 1px rgba(38, 139, 210, 0.35);
+      background: #ffffff;
+    }
+
+    #yl24 textarea {
+      border-radius: 10px;
+      resize: vertical;
+      min-height: 70px;
+    }
+
+    #yl24 button {
+      font-family: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      font-size: 14px;
+      line-height: 1;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      padding: 0.45rem 0.75rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.25rem;
+      white-space: nowrap;
+      transition: filter 0.12s ease, transform 0.05s ease, background 0.12s ease;
+      background: var(--yl24-orange);
+      color: #ffffff;
+    }
+
+    #yl24 button:hover { background: var(--yl24-orange-hover); }
+    #yl24 button:active { transform: translateY(1px); }
+
+    #yl24 button.yl24-btn-ghost {
+      background: #111827;
+      color: #ffffff;
+    }
+
+    #yl24 button.yl24-btn-quick {
+      background: #e6f4ff;
+      border: 1px solid var(--yl24-step-blue);
+      color: #0b3b5a;
+    }
+
+    #yl24 button.yl24-btn-quick:hover {
+      background: #d6efff;
+    }
+
+    #yl24 button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    #yl24 .yl24-step-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    #yl24 .yl24-step-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Bebas Neue", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      padding: 6px 12px;
+      min-width: 76px;
+      border-radius: var(--yl24-radius-pill);
+      background: var(--yl24-step-blue);
+      color: #ffffff;
+      letter-spacing: 0.06em;
+      white-space: nowrap;
+      flex: 0 0 auto;
+    }
+
+    #yl24 .yl24-hint {
+      border-radius: var(--yl24-radius-md);
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      padding: 0.55rem 0.65rem;
+      font-size: 12px;
+      color: #1e3a8a;
+      margin-top: 0.5rem;
+    }
+
+    #yl24 .yl24-meter-shell { margin-top: 0.65rem; }
+
+    #yl24 .yl24-meter-track {
+      width: 100%;
+      height: 16px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+
+    #yl24 .yl24-meter-fill {
+      height: 100%;
+      width: 0%;
+      border-radius: inherit;
+      background: var(--yl24-step-blue);
+      transition: width 0.2s ease-out;
+    }
+
+    #yl24 .yl24-meter-labels {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 0.35rem;
+      font-size: 12px;
+      color: var(--yl24-muted);
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    #yl24 .yl24-warning {
+      margin-top: 0.35rem;
+      font-size: 12px;
+      color: #b91c1c;
+      font-weight: 700;
+    }
+
+    #yl24 .yl24-table-wrap {
+      margin-top: 0.5rem;
+      border-radius: var(--yl24-radius-md);
+      border: 1px solid var(--yl24-border);
+      background: #f9fafb;
+      overflow: hidden;
+      overflow-x: auto;
+    }
+
+    #yl24 table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+      min-width: 100%;
+    }
+
+    #yl24 th, #yl24 td {
+      padding: 0.4rem 0.55rem;
+      text-align: left;
+      border-bottom: 1px solid #e5e7eb;
+      vertical-align: middle;
+    }
+
+    #yl24 th {
+      background: #f3f4f6;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    #yl24 tr:last-child td { border-bottom: none; }
+
+    #yl24 .yl24-col-activity { min-width: 140px; width: 42%; }
+    #yl24 .yl24-col-category { min-width: 170px; width: 24%; }
+    #yl24 .yl24-col-minutes { width: 18%; min-width: 90px; white-space: nowrap; }
+    #yl24 .yl24-col-remove { width: 40px; text-align: center; white-space: nowrap; }
+
+    #yl24 .yl24-activity-input,
+    #yl24 .yl24-minutes-input,
+    #yl24 .yl24-category-select {
+      width: 100%;
+      border-radius: 999px;
+      border: 1px solid var(--yl24-border);
+      padding: 0.25rem 0.6rem;
+      background: #ffffff;
+      font-size: 12px;
+      min-height: 28px;
+    }
+
+    #yl24 .yl24-remove-btn {
+      width: 30px;
+      height: 30px;
+      padding: 0;
+      font-size: 18px;
+      background: #111827;
+      color: #ffffff;
+    }
+
+    #yl24 .yl24-table-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+      margin-top: 0.6rem;
+      margin-bottom: 0.1rem;
+    }
+
+    #yl24 .yl24-summary-box {
+      margin-top: 0.6rem;
+      border-radius: var(--yl24-radius-md);
+      background: #020617;
+      color: #e5e7eb;
+      padding: 0.7rem 0.75rem;
+      font-size: 12px;
+    }
+
+    #yl24 .yl24-summary-box p { margin-bottom: 0.45rem; }
+    #yl24 .yl24-summary-box p:last-child { margin-bottom: 0; }
+    #yl24 .yl24-summary-box .yl24-small { color: #cbd5e1; }
+
+    #yl24 .yl24-chip-row {
+      margin-top: 0.45rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.25rem;
+    }
+
+    #yl24 .yl24-chip {
+      font-size: 11px;
+      border-radius: var(--yl24-radius-pill);
+      padding: 0.15rem 0.55rem;
+      border: 1px solid #4b5563;
+      background: #020617;
+      color: #e5e7eb;
+    }
+
+    #yl24 .yl24-chart-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 0.25rem;
+    }
+
+    #yl24 .yl24-select-inline { max-width: 260px; }
+
+    #yl24 .yl24-chart-note { font-size: 11px; color: var(--yl24-muted); margin-top: 0.25rem; }
+
+    #yl24 .yl24-chart-legend {
+      display: flex;
+      gap: 0.5rem;
+      align-items: center;
+      font-size: 11px;
+      margin-top: 0.5rem;
+      margin-bottom: 0.35rem;
+      color: var(--yl24-muted);
+      flex-wrap: wrap;
+    }
+
+    #yl24 .yl24-legend-item { display: inline-flex; align-items: center; gap: 0.25rem; }
+    #yl24 .yl24-legend-swatch { width: 10px; height: 10px; border-radius: 999px; }
+    #yl24 .yl24-legend-you { background: var(--yl24-step-blue); }
+    #yl24 .yl24-legend-baseline { background: #d1d5db; }
+
+    #yl24 .yl24-chart-row {
+      display: grid;
+      grid-template-columns: 120px minmax(0, 1fr);
+      gap: 0.4rem;
+      align-items: center;
+      margin-bottom: 0.5rem;
+      font-size: 12px;
+    }
+
+    #yl24 .yl24-chart-label { font-weight: 600; }
+    #yl24 .yl24-chart-sub { font-size: 11px; color: var(--yl24-muted); }
+
+    #yl24 .yl24-chart-bars {
+      position: relative;
+      width: 100%;
+      height: 12px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      overflow: hidden;
+    }
+
+    #yl24 .yl24-chart-bar-baseline {
+      position: absolute;
+      inset: 0;
+      transform-origin: left center;
+      background: #d1d5db;
+    }
+
+    #yl24 .yl24-chart-bar-you {
+      position: absolute;
+      inset: 0;
+      transform-origin: left center;
+      background: var(--yl24-step-blue);
+      opacity: 0.9;
+    }
+
+    #yl24 .yl24-chart-caption { font-size: 11px; color: var(--yl24-muted); }
+
+    #yl24 .yl24-footer-note { margin-top: 0.5rem; font-size: 11px; color: var(--yl24-muted); }
+    #yl24 .yl24-tagline { margin-top: 0.6rem; font-size: 12px; color: var(--yl24-muted); }
+
+    #yl24 .yl24-lock-note {
+      display: none;
+      margin-top: 0.65rem;
+      border-radius: var(--yl24-radius-md);
+      border: 1px solid #fee2e2;
+      background: #fff1f2;
+      padding: 0.55rem 0.65rem;
+      font-size: 12px;
+      color: #9f1239;
+      font-weight: 700;
+    }
+
+    #yl24 .yl24-intro {
+      margin-top: 0.75rem;
+      border-radius: var(--yl24-radius-lg);
+      border: 1px solid #dbeafe;
+      background: #eff6ff;
+      padding: 0.9rem 1rem;
+    }
+
+    #yl24 .yl24-intro h2 { margin: 0 0 0.25rem; }
+
+    #yl24 .yl24-cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+      margin-top: 0.6rem;
+    }
+
+    #yl24 #yl24-quickadd-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 9999;
+      padding: 1rem;
+    }
+
+    #yl24 #yl24-quickadd-panel {
+      max-width: 460px;
+      margin: 10vh auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: var(--yl24-shadow-soft);
+    }
+
+    #yl24 #yl24-quickadd-title {
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    #yl24 #yl24-guide-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,.45);
+      z-index: 10000;
+      padding: 1rem;
+    }
+
+    #yl24 #yl24-guide-panel {
+      max-width: 520px;
+      margin: 10vh auto;
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 16px;
+      border: 1px solid #e5e7eb;
+      box-shadow: var(--yl24-shadow-soft);
+    }
+
+    #yl24 #yl24-guide-title {
+      font-weight: 900;
+      margin-bottom: 6px;
+    }
+
+    #yl24 #yl24-guide-progress {
+      font-size: 11px;
+      color: var(--yl24-muted);
+      margin-bottom: 6px;
+    }
+
+    #yl24 #yl24-guide-counter {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+      margin: 10px 0 12px;
+      font-size: 12px;
+      color: #111827;
+    }
+
+    #yl24 #yl24-guide-counter strong {
+      font-weight: 800;
+    }
+
+    #yl24 .yl24-counter-inline {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid #e5e7eb;
+      background: #f8fafc;
+      margin-top: 10px;
+      font-size: 12px;
+      color: #111827;
+    }
+
+    #yl24 .yl24-counter-inline .yl24-small {
+      margin: 0;
+      color: #374151;
+    }
+
+    @media (max-width: 760px) {
+      #yl24 .yl24-grid,
+      #yl24 .yl24-grid-2,
+      #yl24 .yl24-row {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      #yl24 { padding: 1rem 0.5rem 2rem; }
+      #yl24 .yl24-shell { padding: 1.25rem 1rem 1.5rem; }
+      #yl24 h1 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+  <div id="yl24">
+    <div class="yl24-shell">
+      <h1>Your Life in 24 Hours</h1>
+      <p class="yl24-small">
+        Enter your age, add daily activities, and see how your minutes map to your remaining-life budget. You can also compare your day to a baseline student weekday model.
+      </p>
+
+      <div class="yl24-intro" id="yl24-intro-card">
+        <h2>What is the attention economy?</h2>
+        <p class="yl24-small">
+          Your attention is a limited daily budget. Apps, games, streaming, ads, school, friends, sports, and obligations compete for it. This tool helps you see how small daily minutes add up over years.
+        </p>
+        <div class="yl24-cta-row">
+          <button type="button" id="yl24-start-btn">Start</button>
+          <button type="button" id="yl24-skip-intro-btn" class="yl24-btn-ghost">Skip</button>
+          <button type="button" data-yl24-guided="1" class="yl24-btn-ghost">Guided mode</button>
+        </div>
+        <div class="yl24-footer-note">Created by Ryan Oxford. © <span id="yl24-year"></span>.</div>
+      </div>
+
+      <div class="yl24-hint" id="yl24-js-hint">
+        Step 2 uses minutes. Quick math: hours x 60 = minutes.
+      </div>
+
+      <div class="yl24-table-actions" style="margin-top:0.55rem; margin-bottom:0.25rem;">
+        <button type="button" data-yl24-guided="1" class="yl24-btn-ghost">Guided mode</button>
+      </div>
+
+      <div class="yl24-card" id="yl24-step1">
+        <div class="yl24-step-header">
+          <span class="yl24-step-badge">STEP 1</span>
+          <div>
+            <h2>Enter your age</h2>
+            <p class="yl24-small">This personalizes the lifetime estimates. “Years of remaining life” uses your age and lifespan below.</p>
+          </div>
+        </div>
+
+        <div class="yl24-row">
+          <div class="yl24-field">
+            <label for="yl24-age-input">Your age</label>
+            <input id="yl24-age-input" type="number" min="5" max="120" placeholder="e.g., 13" />
+          </div>
+          <div class="yl24-field">
+            <label for="yl24-lifespan-input">Assumed lifespan</label>
+            <input id="yl24-lifespan-input" type="number" min="40" max="120" value="85" />
+          </div>
+          <div class="yl24-field">
+            <label>Personalized setup</label>
+            <div id="yl24-age-line" class="yl24-small">Enter your age to personalize the lifetime projections.</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="yl24-grid">
+        <div class="yl24-card" id="yl24-step2">
+          <div class="yl24-step-header">
+            <span class="yl24-step-badge">STEP 2</span>
+            <div>
+              <h2>Build your day (minutes)</h2>
+              <p class="yl24-small">Add activities and minutes per day. Categories help the comparison chart group your time.</p>
+              <div id="yl24-step2-counter" class="yl24-counter-inline" aria-live="polite">
+                <div class="yl24-small">Used: <strong id="yl24-step2-used">0</strong></div>
+                <div class="yl24-small">Remaining: <strong id="yl24-step2-remaining">1440</strong></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="yl24-table-actions">
+            <button type="button" id="yl24-add-row-btn" data-yl24-action="add">Add</button>
+            <button type="button" id="yl24-load-defaults-btn" data-yl24-action="defaults">Defaults</button>
+            <button type="button" id="yl24-clear-all-btn" data-yl24-action="clear">Clear</button>
+          </div>
+
+          <div class="yl24-small" style="margin-top:0.55rem; font-weight:700;">Quick add (hours)</div>
+          <div class="yl24-table-actions">
+            <button type="button" id="yl24-prompt-sleep" class="yl24-btn-quick">Sleep</button>
+            <button type="button" id="yl24-prompt-school" class="yl24-btn-quick">School</button>
+            <button type="button" id="yl24-prompt-social" class="yl24-btn-quick">Social</button>
+            <button type="button" id="yl24-prompt-gaming" class="yl24-btn-quick">Gaming</button>
+            <button type="button" id="yl24-prompt-hygiene" class="yl24-btn-quick">Hygiene</button>
+            <button type="button" id="yl24-prompt-meals" class="yl24-btn-quick">Meals</button>
+          </div>
+
+          <div id="yl24-step2-lock-note" class="yl24-lock-note"></div>
+
+          <div class="yl24-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th class="yl24-col-activity">Activity</th>
+                  <th class="yl24-col-category">Category</th>
+                  <th class="yl24-col-minutes">Minutes/day</th>
+                  <th class="yl24-col-remove">Remove</th>
+                </tr>
+              </thead>
+              <tbody id="yl24-activities-body"></tbody>
+            </table>
+          </div>
+
+          <p class="yl24-footer-note">Tip: Use categories like Sleep, School/Work, Sports, and Screen/Leisure.</p>
+        </div>
+
+        <div class="yl24-card yl24-card-tight" id="yl24-step3">
+          <div class="yl24-step-header">
+            <span class="yl24-step-badge">STEP 3</span>
+            <div>
+              <h2>24-hour meter and lifetime summary</h2>
+              <p class="yl24-small">Check how full your day is and read the summary. This tool never suggests cutting sleep.</p>
+            </div>
+          </div>
+
+          <div id="yl24-step3-lock-note" class="yl24-lock-note"></div>
+
+          <div class="yl24-small">
+            This meter shows how many of your 1,440 minutes you have assigned. Over 24 hours implies overlapping activities.
+          </div>
+
+          <div class="yl24-meter-shell">
+            <div class="yl24-meter-track"><div id="yl24-meter-fill" class="yl24-meter-fill"></div></div>
+            <div class="yl24-meter-labels">
+              <span id="yl24-meter-used">Used: 0 of 1,440 minutes (0.0%)</span>
+              <span id="yl24-meter-remaining">Remaining: 1,440 minutes (100.0%)</span>
+            </div>
+            <div id="yl24-meter-warning" class="yl24-warning" style="display:none;"></div>
+          </div>
+
+          <h3>Lifetime impact (personalized)</h3>
+          <div id="yl24-summary-box" class="yl24-summary-box">
+            <p id="yl24-summary-main">Add a few daily activities and minutes to see how they use your remaining years.</p>
+            <p id="yl24-summary-suggestion" class="yl24-small">For most teenagers, 8–10 hours of sleep per night is recommended by pediatric sleep researchers.</p>
+            <div id="yl24-summary-chips" class="yl24-chip-row"></div>
+          </div>
+
+          <div class="yl24-table-actions" style="margin-top:0.65rem;">
+            <button type="button" id="yl24-email-btn">Email</button>
+            <button type="button" id="yl24-copy-btn" class="yl24-btn-ghost">Copy</button>
+          </div>
+
+          <p class="yl24-footer-note">Email opens your default email app with a draft summary.</p>
+        </div>
+      </div>
+
+      <div class="yl24-grid-2" style="margin-top:1.25rem;">
+        <div class="yl24-card">
+          <h2>Detailed results</h2>
+          <p class="yl24-small">This table shows your per-activity impact using your remaining years (lifespan minus age).</p>
+
+          <div class="yl24-table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Activity</th>
+                  <th>Category</th>
+                  <th>Minutes/day</th>
+                  <th>% of day</th>
+                  <th>Years of remaining life</th>
+                </tr>
+              </thead>
+              <tbody id="yl24-results-body"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="yl24-card">
+          <h2>Comparison chart</h2>
+          <p class="yl24-small">Compare your category totals against a baseline.</p>
+
+          <div class="yl24-chart-header">
+            <div>
+              <div class="yl24-small">Baseline source</div>
+              <select id="yl24-baseline-select" class="yl24-select-inline">
+                <option value="student-weekday">Student weekday model (built to 24 hours)</option>
+              </select>
+              <div id="yl24-baseline-note" class="yl24-chart-note"></div>
+            </div>
+          </div>
+
+          <div class="yl24-chart-legend">
+            <span class="yl24-legend-item"><span class="yl24-legend-swatch yl24-legend-you"></span>Your day</span>
+            <span class="yl24-legend-item"><span class="yl24-legend-swatch yl24-legend-baseline"></span>Baseline</span>
+          </div>
+
+          <div id="yl24-chart-rows"></div>
+        </div>
+      </div>
+
+      <p class="yl24-tagline">This page is a thinking tool, not medical advice. For questions about sleep, mental health, or workload, talk with a trusted adult or health professional.</p>
+    </div>
+
+    <div id="yl24-quickadd-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div id="yl24-quickadd-panel">
+        <div id="yl24-quickadd-title">Quick Add</div>
+        <div id="yl24-quickadd-question" class="yl24-small" style="margin-bottom:10px;"></div>
+        <div class="yl24-row" style="grid-template-columns: 1fr 1fr; margin-top:0;">
+          <div class="yl24-field">
+            <label for="yl24-quickadd-hours">Hours</label>
+            <input id="yl24-quickadd-hours" type="number" step="0.25" min="0" placeholder="e.g., 1.5" />
+          </div>
+          <div class="yl24-field">
+            <label>Minutes</label>
+            <input id="yl24-quickadd-minutes" type="number" min="0" placeholder="auto" disabled />
+          </div>
+        </div>
+        <div class="yl24-table-actions" style="margin-top:12px;">
+          <button type="button" id="yl24-quickadd-save">Save</button>
+          <button type="button" id="yl24-quickadd-cancel" class="yl24-btn-ghost">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="yl24-guide-modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div id="yl24-guide-panel">
+        <div id="yl24-guide-progress"></div>
+        <div id="yl24-guide-title">Guided mode</div>
+        <div id="yl24-guide-text" class="yl24-small" style="margin-top:6px;"></div>
+
+        <div id="yl24-guide-counter" aria-live="polite">
+          <div>Used: <strong id="yl24-guide-used">0</strong> <span id="yl24-guide-used-hm"></span></div>
+          <div>Remaining: <strong id="yl24-guide-rem">1440</strong> <span id="yl24-guide-rem-hm"></span></div>
+        </div>
+
+        <div id="yl24-guide-age-fields" style="display:none;">
+          <div class="yl24-row" style="grid-template-columns: 1fr 1fr; margin-top:0;">
+            <div class="yl24-field">
+              <label for="yl24-guide-age">Your age</label>
+              <input id="yl24-guide-age" type="number" min="5" max="120" placeholder="e.g., 13" />
+            </div>
+            <div class="yl24-field">
+              <label for="yl24-guide-lifespan">Assumed lifespan</label>
+              <input id="yl24-guide-lifespan" type="number" min="40" max="120" value="85" />
+            </div>
+          </div>
+        </div>
+
+        <div id="yl24-guide-name-fields" style="display:none; margin-top:8px;">
+          <div class="yl24-field">
+            <label for="yl24-guide-name-input">Activity name</label>
+            <input id="yl24-guide-name-input" type="text" placeholder="e.g., Homework" />
+          </div>
+        </div>
+
+        <div id="yl24-guide-hours-fields" style="display:none;">
+          <div class="yl24-row" style="grid-template-columns: 1fr 1fr; margin-top:0;">
+            <div class="yl24-field">
+              <label for="yl24-guide-hours">Hours</label>
+              <input id="yl24-guide-hours" type="number" step="0.25" min="0" placeholder="e.g., 1.5" />
+            </div>
+            <div class="yl24-field">
+              <label>Minutes</label>
+              <input id="yl24-guide-minutes" type="number" min="0" placeholder="auto" disabled />
+            </div>
+          </div>
+        </div>
+
+        <div id="yl24-guide-error" class="yl24-warning" style="display:none; margin-top:10px;"></div>
+
+        <div class="yl24-table-actions" style="margin-top:12px;">
+          <button type="button" id="yl24-guide-back" class="yl24-btn-ghost">Back</button>
+          <button type="button" id="yl24-guide-next">Next</button>
+          <button type="button" id="yl24-guide-exit" class="yl24-btn-ghost">Skip</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      function $(id) { return document.getElementById(id); }
+
+      const MINUTES_PER_DAY = 1440;
+
+      const CATEGORY_OPTIONS = [
+        "Sleep",
+        "School/Work",
+        "Sports",
+        "Screen/Leisure",
+        "Meals",
+        "Hygiene/Personal care",
+        "Chores",
+        "Other"
+      ];
+
+      const FLEXIBLE_CATEGORIES = new Set([
+        "Sports",
+        "Screen/Leisure",
+        "Chores",
+        "Other"
+      ]);
+
+      const DEFAULT_ACTIVITIES = [
+        { name: "Sleep", minutes: 480, category: "Sleep" },
+        { name: "School / classes", minutes: 420, category: "School/Work" },
+        { name: "Sports / exercise", minutes: 60, category: "Sports" },
+        { name: "Social media", minutes: 90, category: "Screen/Leisure" },
+        { name: "Gaming / YouTube", minutes: 90, category: "Screen/Leisure" },
+        { name: "Meals", minutes: 90, category: "Meals" },
+        { name: "Showering / hygiene", minutes: 20, category: "Hygiene/Personal care" },
+        { name: "Getting ready", minutes: 20, category: "Hygiene/Personal care" },
+        { name: "Chores", minutes: 30, category: "Chores" }
+      ];
+
+      const BASELINES = {
+        "student-weekday": {
+          note: "Assumes 8 h sleep, 8 h school/work, 1 h sports, 2.5 h screen/leisure, 1.5 h meals, 1 h hygiene/personal care, 0.5 h chores, 1 h other.",
+          minutesByCategory: {
+            "Sleep": 8 * 60,
+            "School/Work": 8 * 60,
+            "Sports": 60,
+            "Screen/Leisure": 150,
+            "Meals": 90,
+            "Hygiene/Personal care": 60,
+            "Chores": 30,
+            "Other": 60
+          }
+        }
+      };
+
+      function hoursToMinutes(hours) {
+        const h = typeof hours === "number" ? hours : parseFloat(String(hours).trim());
+        if (isNaN(h) || h < 0) return null;
+        return Math.round(h * 60);
+      }
+
+      function minutesToHours(mins) {
+        const m = typeof mins === "number" ? mins : parseFloat(String(mins).trim());
+        if (isNaN(m) || m < 0) return null;
+        return Math.round((m / 60) * 100) / 100;
+      }
+
+      function formatHM(totalMinutes) {
+        const mins = Math.max(0, Math.round(totalMinutes || 0));
+        const h = Math.floor(mins / 60);
+        const m = mins % 60;
+        return { h, m, mins };
+      }
+
+      function formatHMText(totalMinutes) {
+        const v = formatHM(totalMinutes);
+        return "(" + v.h + "h " + v.m + "m)";
+      }
+
+      function init() {
+        const activitiesBody = $("yl24-activities-body");
+        if (!activitiesBody) return;
+
+        const yearEl = $("yl24-year");
+        if (yearEl) yearEl.textContent = String(new Date().getFullYear());
+
+        const introCard = $("yl24-intro-card");
+        const startBtn = $("yl24-start-btn");
+        const skipIntroBtn = $("yl24-skip-intro-btn");
+
+        const step2Card = $("yl24-step2");
+        const step3Card = $("yl24-step3");
+        const step2LockNote = $("yl24-step2-lock-note");
+        const step3LockNote = $("yl24-step3-lock-note");
+
+        const ageInput = $("yl24-age-input");
+        const lifespanInput = $("yl24-lifespan-input");
+        const ageLine = $("yl24-age-line");
+
+        const addRowBtn = $("yl24-add-row-btn");
+        const loadDefaultsBtn = $("yl24-load-defaults-btn");
+        const clearAllBtn = $("yl24-clear-all-btn");
+
+        const meterFill = $("yl24-meter-fill");
+        const meterUsed = $("yl24-meter-used");
+        const meterRemaining = $("yl24-meter-remaining");
+        const meterWarning = $("yl24-meter-warning");
+
+        const summaryMain = $("yl24-summary-main");
+        const summarySuggestion = $("yl24-summary-suggestion");
+        const summaryChips = $("yl24-summary-chips");
+
+        const resultsBody = $("yl24-results-body");
+        const chartRows = $("yl24-chart-rows");
+        const baselineSelect = $("yl24-baseline-select");
+        const baselineNote = $("yl24-baseline-note");
+
+        const emailBtn = $("yl24-email-btn");
+        const copyBtn = $("yl24-copy-btn");
+
+        const promptSleepBtn = $("yl24-prompt-sleep");
+        const promptSchoolBtn = $("yl24-prompt-school");
+        const promptSocialBtn = $("yl24-prompt-social");
+        const promptGamingBtn = $("yl24-prompt-gaming");
+        const promptHygieneBtn = $("yl24-prompt-hygiene");
+        const promptMealsBtn = $("yl24-prompt-meals");
+
+        const qaModal = $("yl24-quickadd-modal");
+        const qaTitle = $("yl24-quickadd-title");
+        const qaQuestion = $("yl24-quickadd-question");
+        const qaHours = $("yl24-quickadd-hours");
+        const qaMinutes = $("yl24-quickadd-minutes");
+        const qaSave = $("yl24-quickadd-save");
+        const qaCancel = $("yl24-quickadd-cancel");
+
+        const guideModal = $("yl24-guide-modal");
+        const guideProgress = $("yl24-guide-progress");
+        const guideTitle = $("yl24-guide-title");
+        const guideText = $("yl24-guide-text");
+        const guideAgeFields = $("yl24-guide-age-fields");
+        const guideAge = $("yl24-guide-age");
+        const guideLifespan = $("yl24-guide-lifespan");
+        const guideNameFields = $("yl24-guide-name-fields");
+        const guideNameInput = $("yl24-guide-name-input");
+        const guideHoursFields = $("yl24-guide-hours-fields");
+        const guideHours = $("yl24-guide-hours");
+        const guideMinutes = $("yl24-guide-minutes");
+        const guideError = $("yl24-guide-error");
+        const guideBack = $("yl24-guide-back");
+        const guideNext = $("yl24-guide-next");
+        const guideExit = $("yl24-guide-exit");
+
+        let qaState = null;
+        let guideIndex = 0;
+        let guideSteps = null;
+
+        function updateStep2Counter(totalDailyMinutes) {
+          const usedEl = $("yl24-step2-used");
+          const remEl = $("yl24-step2-remaining");
+          if (!usedEl || !remEl) return;
+          const used = Math.max(0, Math.round(totalDailyMinutes || 0));
+          const rem = Math.max(0, MINUTES_PER_DAY - used);
+          usedEl.textContent = used + " " + formatHMText(used);
+          remEl.textContent = rem + " " + formatHMText(rem);
+        }
+
+        function updateGuideCounter() {
+          const usedEl = $("yl24-guide-used");
+          const remEl = $("yl24-guide-rem");
+          const usedHm = $("yl24-guide-used-hm");
+          const remHm = $("yl24-guide-rem-hm");
+          if (!usedEl || !remEl || !usedHm || !remHm) return;
+
+          const currentActivities = getActivities();
+          const baseUsed = currentActivities.reduce((s, a) => s + a.minutes, 0);
+
+          let previewAdd = 0;
+          if (guideModal && guideModal.style.display === "block" && guideSteps && guideSteps[guideIndex]) {
+            const step = guideSteps[guideIndex];
+            if (step.type === "activity" || step.type === "custom") {
+              const mins = hoursToMinutes(guideHours.value);
+              previewAdd = (mins === null) ? 0 : mins;
+            }
+          }
+
+          const used = Math.max(0, Math.round(baseUsed + previewAdd));
+          const rem = Math.max(0, MINUTES_PER_DAY - used);
+
+          usedEl.textContent = String(used);
+          remEl.textContent = String(rem);
+          usedHm.textContent = " " + formatHMText(used);
+          remHm.textContent = " " + formatHMText(rem);
+        }
+
+        function parseNumber(el) {
+          if (!el) return null;
+          const v = parseFloat(el.value);
+          return isNaN(v) ? null : v;
+        }
+
+        function getAgeAndRemainingYears() {
+          const age = parseNumber(ageInput);
+          const lifespan = parseNumber(lifespanInput) ?? 85;
+          const clampedLifespan = Math.max(40, Math.min(120, lifespan));
+          const validAge = age !== null && age >= 5 && age <= 120;
+          const remaining = validAge ? Math.max(0, clampedLifespan - age) : null;
+          return { age: validAge ? age : null, lifespan: clampedLifespan, remainingYears: remaining };
+        }
+
+        function updateAgeLine() {
+          if (!ageLine) return;
+          const a = getAgeAndRemainingYears();
+          if (a.age === null || a.remainingYears === null) {
+            ageLine.textContent = "Enter your age to personalize the lifetime projections.";
+            return;
+          }
+          ageLine.innerHTML =
+            '<span style="font-weight:600;color:#111827;">If you\'re ' +
+            a.age +
+            " and assuming you will live until " +
+            a.lifespan +
+            ", this tool estimates impacts across your remaining " +
+            a.remainingYears.toFixed(1) +
+            " years.</span>";
+        }
+
+        function createActivityRow(activity, category, minutes) {
+          const tr = document.createElement("tr");
+
+          const tdName = document.createElement("td");
+          tdName.className = "yl24-col-activity";
+          const nameInput = document.createElement("input");
+          nameInput.type = "text";
+          nameInput.className = "yl24-activity-input";
+          nameInput.value = activity || "";
+          tdName.appendChild(nameInput);
+
+          const tdCategory = document.createElement("td");
+          tdCategory.className = "yl24-col-category";
+          const categorySelect = document.createElement("select");
+          categorySelect.className = "yl24-category-select";
+          CATEGORY_OPTIONS.forEach(function (opt) {
+            const optionEl = document.createElement("option");
+            optionEl.value = opt;
+            optionEl.textContent = opt;
+            if (opt === (category || "Other")) optionEl.selected = true;
+            categorySelect.appendChild(optionEl);
+          });
+          tdCategory.appendChild(categorySelect);
+
+          const tdMinutes = document.createElement("td");
+          tdMinutes.className = "yl24-col-minutes";
+          const minutesInput = document.createElement("input");
+          minutesInput.type = "number";
+          minutesInput.min = "0";
+          minutesInput.className = "yl24-minutes-input";
+          minutesInput.placeholder = "min";
+          if (minutes !== undefined && minutes !== null && minutes !== "") minutesInput.value = String(minutes);
+          tdMinutes.appendChild(minutesInput);
+
+          const tdRemove = document.createElement("td");
+          tdRemove.className = "yl24-col-remove";
+          const removeBtn = document.createElement("button");
+          removeBtn.type = "button";
+          removeBtn.textContent = "×";
+          removeBtn.className = "yl24-remove-btn";
+          tdRemove.appendChild(removeBtn);
+
+          tr.appendChild(tdName);
+          tr.appendChild(tdCategory);
+          tr.appendChild(tdMinutes);
+          tr.appendChild(tdRemove);
+
+          function onChange() { recalc(); }
+          nameInput.addEventListener("input", onChange);
+          categorySelect.addEventListener("change", onChange);
+          minutesInput.addEventListener("input", onChange);
+
+          removeBtn.addEventListener("click", function () {
+            tr.remove();
+            if (activitiesBody.querySelectorAll("tr").length === 0) {
+              activitiesBody.appendChild(createActivityRow("", "Other", ""));
+            }
+            recalc();
+          });
+
+          return tr;
+        }
+
+        function clearActivities() { activitiesBody.innerHTML = ""; }
+
+        function loadDefaults() {
+          clearActivities();
+          DEFAULT_ACTIVITIES.forEach(function (a) {
+            activitiesBody.appendChild(createActivityRow(a.name, a.category, a.minutes));
+          });
+        }
+
+        function getActivities() {
+          const rows = Array.from(activitiesBody.querySelectorAll("tr"));
+          const list = [];
+          rows.forEach(function (tr) {
+            const name = tr.querySelector(".yl24-activity-input").value.trim();
+            const category = tr.querySelector(".yl24-category-select").value;
+            const minutesStr = tr.querySelector(".yl24-minutes-input").value;
+            const minutes = parseFloat(minutesStr);
+            if (!name || isNaN(minutes) || minutes <= 0) return;
+            list.push({ name: name, category: category, minutes: minutes });
+          });
+          return list;
+        }
+
+        function aggregateByCategory(activities) {
+          const byCat = {};
+          activities.forEach(function (a) {
+            if (!byCat[a.category]) byCat[a.category] = 0;
+            byCat[a.category] += a.minutes;
+          });
+          return byCat;
+        }
+
+        function setStepEnabled(stepEl, enabled, noteEl, noteText) {
+          if (!stepEl) return;
+          const controls = stepEl.querySelectorAll("button, input, select, textarea");
+          controls.forEach(function (c) { c.disabled = !enabled; });
+          if (noteEl) {
+            noteEl.style.display = enabled ? "none" : "block";
+            noteEl.textContent = enabled ? "" : (noteText || "Locked.");
+          }
+        }
+
+        function unlockLogic() {
+          const a = getAgeAndRemainingYears();
+          const step2Enabled = (a.age !== null);
+          setStepEnabled(step2Card, step2Enabled, step2LockNote, "Enter your age in Step 1 to unlock Step 2.");
+
+          const activities = getActivities();
+          const total = activities.reduce(function (sum, x) { return sum + x.minutes; }, 0);
+          const step3Enabled = step2Enabled && activities.length >= 1 && total > 0;
+          setStepEnabled(step3Card, step3Enabled, step3LockNote, "Add at least one activity with minutes to unlock Step 3.");
+        }
+
+        function buildChart(enrichedActivities) {
+          if (!baselineSelect || !baselineNote || !chartRows) return;
+          const baselineKey = baselineSelect.value;
+          const baseline = BASELINES[baselineKey];
+          if (!baseline) return;
+
+          baselineNote.textContent = baseline.note;
+
+          const userByCat = aggregateByCategory(enrichedActivities);
+          const baselineCats = baseline.minutesByCategory;
+          const allCategories = Array.from(new Set([].concat(Object.keys(baselineCats), Object.keys(userByCat))));
+
+          chartRows.innerHTML = "";
+
+          allCategories.forEach(function (cat) {
+            const baselineMinutes = baselineCats[cat] || 0;
+            const userMinutes = userByCat[cat] || 0;
+
+            const baselineHours = baselineMinutes / 60;
+            const userHours = userMinutes / 60;
+
+            const baselineWidth = Math.min(100, (baselineMinutes / MINUTES_PER_DAY) * 100);
+            const userWidth = Math.min(100, (userMinutes / MINUTES_PER_DAY) * 100);
+
+            const row = document.createElement("div");
+            row.className = "yl24-chart-row";
+
+            const labelCol = document.createElement("div");
+            labelCol.innerHTML =
+              '<div class="yl24-chart-label">' +
+              cat +
+              '</div><div class="yl24-chart-sub">' +
+              userHours.toFixed(2) +
+              "h vs " +
+              baselineHours.toFixed(2) +
+              "h</div>";
+
+            const barCol = document.createElement("div");
+
+            const bars = document.createElement("div");
+            bars.className = "yl24-chart-bars";
+
+            const baselineBar = document.createElement("div");
+            baselineBar.className = "yl24-chart-bar-baseline";
+            baselineBar.style.transform = "scaleX(" + (baselineWidth / 100) + ")";
+
+            const userBar = document.createElement("div");
+            userBar.className = "yl24-chart-bar-you";
+            userBar.style.transform = "scaleX(" + (userWidth / 100) + ")";
+
+            bars.appendChild(baselineBar);
+            bars.appendChild(userBar);
+
+            const caption = document.createElement("div");
+            caption.className = "yl24-chart-caption";
+            caption.textContent = "Bars show share of a 24-hour day.";
+
+            barCol.appendChild(bars);
+            barCol.appendChild(caption);
+
+            row.appendChild(labelCol);
+            row.appendChild(barCol);
+            chartRows.appendChild(row);
+          });
+        }
+
+        function buildEmailBody() {
+          const a = getAgeAndRemainingYears();
+          const activities = getActivities();
+          const lines = [];
+          lines.push("Your Life in 24 Hours – Summary");
+          lines.push("");
+          if (a.age !== null && a.remainingYears !== null) {
+            lines.push("Age: " + a.age + " years");
+            lines.push("Estimated remaining years (using tool lifespan): " + a.remainingYears.toFixed(1));
+            lines.push("");
+          }
+          lines.push("Daily activities (minutes/day):");
+          if (activities.length === 0) {
+            lines.push("(No activities entered.)");
+          } else {
+            activities.forEach(function (x) {
+              lines.push("- " + x.name + " (" + x.category + ") – " + x.minutes.toFixed(0) + " min/day");
+            });
+          }
+          lines.push("");
+          lines.push("Created by Ryan Oxford. © " + new Date().getFullYear() + ".");
+          return encodeURIComponent(lines.join("\n"));
+        }
+
+        function buildCopySummaryText() {
+          const a = getAgeAndRemainingYears();
+          const activities = getActivities();
+          let text = "Your Life in 24 Hours – Summary\n\n";
+          if (a.age !== null && a.remainingYears !== null) {
+            text += "Age: " + a.age + " years\nEstimated remaining years (using tool lifespan): " + a.remainingYears.toFixed(1) + "\n\n";
+          }
+          text += "Daily activities (minutes/day):\n";
+          if (activities.length === 0) {
+            text += "(No activities entered.)\n";
+          } else {
+            activities.forEach(function (x) {
+              text += "- " + x.name + " (" + x.category + ") – " + x.minutes.toFixed(0) + " min/day\n";
+            });
+          }
+          text += "\nCreated by Ryan Oxford. © " + new Date().getFullYear() + ".\n";
+          return text;
+        }
+
+        function addOrUpdateActivityByName(name, category, minutes) {
+          if (minutes === null) return;
+
+          const rows = Array.from(activitiesBody.querySelectorAll("tr"));
+          const existing = rows.find(function (tr) {
+            return tr.querySelector(".yl24-activity-input").value.trim().toLowerCase() === name.toLowerCase();
+          });
+
+          if (existing) {
+            existing.querySelector(".yl24-category-select").value = category;
+            existing.querySelector(".yl24-minutes-input").value = String(minutes);
+            recalc();
+            return;
+          }
+
+          const blank = rows.find(function (tr) {
+            const n = tr.querySelector(".yl24-activity-input").value.trim();
+            const mRaw = tr.querySelector(".yl24-minutes-input").value;
+            const m = parseFloat(mRaw);
+            const minutesEmpty = mRaw === "" || isNaN(m) || m <= 0;
+            return n === "" && minutesEmpty;
+          });
+
+          if (blank) {
+            blank.querySelector(".yl24-activity-input").value = name;
+            blank.querySelector(".yl24-category-select").value = category;
+            blank.querySelector(".yl24-minutes-input").value = String(minutes);
+          } else {
+            activitiesBody.appendChild(createActivityRow(name, category, minutes));
+          }
+
+          recalc();
+        }
+
+        function showQuickAdd(title, question, defaultHours, name, category) {
+          qaState = { name: name, category: category };
+          qaTitle.textContent = title;
+          qaQuestion.textContent = question;
+          qaHours.value = (defaultHours ?? "");
+          qaMinutes.value = "";
+          qaModal.style.display = "block";
+          qaModal.setAttribute("aria-hidden", "false");
+          updateQuickAddMinutes();
+          qaHours.focus();
+          qaHours.select();
+        }
+
+        function hideQuickAdd() {
+          qaModal.style.display = "none";
+          qaModal.setAttribute("aria-hidden", "true");
+          qaState = null;
+        }
+
+        function updateQuickAddMinutes() {
+          const mins = hoursToMinutes(qaHours.value);
+          qaMinutes.value = (mins === null) ? "" : String(mins);
+        }
+
+        function setGuideError(msg) {
+          if (!guideError) return;
+          if (!msg) {
+            guideError.style.display = "none";
+            guideError.textContent = "";
+            return;
+          }
+          guideError.style.display = "block";
+          guideError.textContent = msg;
+        }
+
+        function showGuide() {
+          if (!guideModal) return;
+          guideModal.style.display = "block";
+          guideModal.setAttribute("aria-hidden", "false");
+        }
+
+        function hideGuide() {
+          if (!guideModal) return;
+          guideModal.style.display = "none";
+          guideModal.setAttribute("aria-hidden", "true");
+          setGuideError("");
+          try { localStorage.setItem("yl24_guided_dismissed", "1"); } catch (e) {}
+        }
+
+        function getExistingMinutesByName(name) {
+          const rows = Array.from(activitiesBody.querySelectorAll("tr"));
+          const tr = rows.find(function (r) {
+            return r.querySelector(".yl24-activity-input").value.trim().toLowerCase() === name.toLowerCase();
+          });
+          if (!tr) return null;
+          const raw = tr.querySelector(".yl24-minutes-input").value;
+          const v = parseFloat(raw);
+          return isNaN(v) ? null : v;
+        }
+
+        function buildGuideSteps() {
+          return [
+            {
+              type: "info",
+              title: "What you are doing",
+              text: "You have 24 hours per day (1,440 minutes). This tool helps you see how your attention and time get spent, and how small daily minutes add up over years. In this guided mode you will enter hours, and the tool will convert to minutes for you."
+            },
+            { type: "age", title: "Step 1", text: "Enter your age to personalize the lifetime estimate." },
+            { type: "activity", title: "Sleep", text: "How many hours do you sleep per night?", name: "Sleep", category: "Sleep", defaultHours: 8 },
+            { type: "activity", title: "School", text: "How many hours are you in school/work per day?", name: "School / classes", category: "School/Work", defaultHours: 7 },
+            { type: "activity", title: "Hygiene", text: "How many hours for hygiene/getting ready per day?", name: "Getting ready", category: "Hygiene/Personal care", defaultHours: 0.75 },
+            { type: "activity", title: "Meals", text: "How many hours eating meals/snacks per day?", name: "Meals", category: "Meals", defaultHours: 1.5 },
+            { type: "activity", title: "Screen time", text: "How many hours total on screens for fun (social, videos, gaming)?", name: "Screen time", category: "Screen/Leisure", defaultHours: 2.5 },
+            { type: "activity", title: "Exercise", text: "How many hours of sports/exercise per day?", name: "Sports / exercise", category: "Sports", defaultHours: 1 },
+            { type: "custom", title: "One more", text: "Add one more activity you do most days.", category: "Other", defaultHours: 1 },
+            { type: "done", title: "Done", text: "Now you can tweak anything in the table. Step 3 updates live as you edit." }
+          ];
+        }
+
+        function renderGuide() {
+          if (!guideSteps) guideSteps = buildGuideSteps();
+          const step = guideSteps[guideIndex];
+          if (!step) return;
+
+          guideProgress.textContent = "Step " + (guideIndex + 1) + " of " + guideSteps.length;
+          guideTitle.textContent = step.title;
+          guideText.textContent = step.text;
+          setGuideError("");
+
+          guideAgeFields.style.display = (step.type === "age") ? "block" : "none";
+          guideHoursFields.style.display = (step.type === "activity" || step.type === "custom") ? "block" : "none";
+          guideNameFields.style.display = (step.type === "custom") ? "block" : "none";
+
+          guideBack.style.visibility = (guideIndex === 0) ? "hidden" : "visible";
+          guideNext.textContent = (step.type === "done") ? "Finish" : "Next";
+
+          if (step.type === "age") {
+            guideAge.value = ageInput.value || "";
+            guideLifespan.value = lifespanInput.value || "85";
+            guideAge.focus();
+            guideAge.select();
+          }
+
+          if (step.type === "activity") {
+            const existing = getExistingMinutesByName(step.name);
+            const h = existing !== null ? minutesToHours(existing) : step.defaultHours;
+            guideHours.value = (h ?? "");
+            const mins = hoursToMinutes(guideHours.value);
+            guideMinutes.value = (mins === null) ? "" : String(mins);
+            guideHours.focus();
+            guideHours.select();
+          }
+
+          if (step.type === "custom") {
+            guideNameInput.value = "";
+            guideHours.value = (step.defaultHours ?? "");
+            const mins = hoursToMinutes(guideHours.value);
+            guideMinutes.value = (mins === null) ? "" : String(mins);
+            guideNameInput.focus();
+            guideNameInput.select();
+          }
+
+          updateGuideCounter();
+        }
+
+        function startGuide() {
+          if (!guideSteps) guideSteps = buildGuideSteps();
+          guideIndex = 0;
+          showGuide();
+          renderGuide();
+        }
+
+        function guideNextStep() {
+          if (!guideSteps) guideSteps = buildGuideSteps();
+          const step = guideSteps[guideIndex];
+          if (!step) return;
+
+          if (step.type === "info") {
+            guideIndex++;
+            renderGuide();
+            return;
+          }
+
+          if (step.type === "age") {
+            const a = parseFloat(guideAge.value);
+            const l = parseFloat(guideLifespan.value);
+            if (isNaN(a) || a < 5 || a > 120) {
+              setGuideError("Enter a valid age.");
+              return;
+            }
+            const lifespan = isNaN(l) ? 85 : Math.max(40, Math.min(120, l));
+            ageInput.value = String(a);
+            lifespanInput.value = String(lifespan);
+            updateAgeLine();
+            recalc();
+            guideIndex++;
+            renderGuide();
+            return;
+          }
+
+          if (step.type === "activity") {
+            const mins = hoursToMinutes(guideHours.value);
+            if (mins === null || mins <= 0) {
+              setGuideError("Enter hours greater than 0.");
+              return;
+            }
+            addOrUpdateActivityByName(step.name, step.category, mins);
+            guideIndex++;
+            renderGuide();
+            return;
+          }
+
+          if (step.type === "custom") {
+            const name = String(guideNameInput.value || "").trim();
+            if (!name) {
+              setGuideError("Enter an activity name.");
+              return;
+            }
+            const mins = hoursToMinutes(guideHours.value);
+            if (mins === null || mins <= 0) {
+              setGuideError("Enter hours greater than 0.");
+              return;
+            }
+            addOrUpdateActivityByName(name, step.category, mins);
+            guideIndex++;
+            renderGuide();
+            return;
+          }
+
+          if (step.type === "done") {
+            hideGuide();
+            return;
+          }
+
+          guideIndex++;
+          renderGuide();
+        }
+
+        function guideBackStep() {
+          if (guideIndex <= 0) return;
+          guideIndex--;
+          renderGuide();
+        }
+
+        function updateGuideMinutes() {
+          const mins = hoursToMinutes(guideHours.value);
+          guideMinutes.value = (mins === null) ? "" : String(mins);
+          updateGuideCounter();
+        }
+
+        function recalc() {
+          unlockLogic();
+
+          const a = getAgeAndRemainingYears();
+          const activities = getActivities();
+
+          let totalDailyMinutes = 0;
+          const enriched = activities.map(function (x) {
+            totalDailyMinutes += x.minutes;
+            const percentOfDay = (x.minutes / MINUTES_PER_DAY) * 100;
+            let lifetimeYears = 0;
+            if (a.remainingYears !== null) {
+              lifetimeYears = (x.minutes * a.remainingYears) / (60 * 24);
+            }
+            return { name: x.name, category: x.category, minutes: x.minutes, percentOfDay: percentOfDay, lifetimeYears: lifetimeYears };
+          });
+
+          const usedPercentExact = (totalDailyMinutes / MINUTES_PER_DAY) * 100;
+          const usedPercentClamped = Math.min(100, Math.max(0, usedPercentExact));
+          const remainingMinutes = Math.max(0, MINUTES_PER_DAY - totalDailyMinutes);
+          const remainingPercent = Math.max(0, 100 - usedPercentExact);
+
+          meterFill.style.width = usedPercentClamped.toFixed(2) + "%";
+          meterUsed.textContent = "Used: " + totalDailyMinutes.toFixed(0) + " of 1,440 minutes (" + usedPercentExact.toFixed(1) + "%)";
+          meterRemaining.textContent = "Remaining: " + remainingMinutes.toFixed(0) + " minutes (" + remainingPercent.toFixed(1) + "%)";
+
+          updateStep2Counter(totalDailyMinutes);
+          updateGuideCounter();
+
+          if (totalDailyMinutes > MINUTES_PER_DAY) {
+            meterWarning.style.display = "block";
+            meterWarning.textContent = "These activities add up to more than 24 hours. Some must overlap.";
+          } else {
+            meterWarning.style.display = "none";
+            meterWarning.textContent = "";
+          }
+
+          resultsBody.innerHTML = "";
+          if (enriched.length === 0) {
+            const tr = document.createElement("tr");
+            const td = document.createElement("td");
+            td.colSpan = 5;
+            td.className = "yl24-small";
+            td.textContent = "No activities yet. Add at least one activity to see detailed results.";
+            tr.appendChild(td);
+            resultsBody.appendChild(tr);
+          } else {
+            enriched.forEach(function (e) {
+              const tr = document.createElement("tr");
+              tr.innerHTML =
+                "<td>" + e.name + "</td>" +
+                "<td>" + e.category + "</td>" +
+                "<td>" + e.minutes.toFixed(0) + "</td>" +
+                "<td>" + e.percentOfDay.toFixed(1) + "%</td>" +
+                "<td>" + (a.remainingYears !== null ? e.lifetimeYears.toFixed(2) : "-") + "</td>";
+              resultsBody.appendChild(tr);
+            });
+          }
+
+          summaryChips.innerHTML = "";
+
+          if (enriched.length === 0 || a.remainingYears === null) {
+            summaryMain.textContent = "Add a few daily activities and minutes to see how they use your remaining years.";
+            summarySuggestion.textContent = "For most teenagers, 8–10 hours of sleep per night is recommended by pediatric sleep researchers.";
+            chartRows.innerHTML = "";
+            return;
+          }
+
+          let totalLifetimeYears = 0;
+          enriched.forEach(function (e) { totalLifetimeYears += e.lifetimeYears; });
+
+          summaryMain.textContent =
+            "These activities use about " + usedPercentExact.toFixed(1) +
+            "% of a 24-hour day. Across your remaining " + a.remainingYears.toFixed(1) +
+            " years, that adds up to roughly " + totalLifetimeYears.toFixed(2) + " years of time.";
+
+          const sortedByLifetime = enriched.slice().sort(function (x, y) { return y.lifetimeYears - x.lifetimeYears; });
+          const nonSleep = sortedByLifetime.filter(function (x) { return x.category !== "Sleep"; });
+
+          let suggestion = "Sleep is often one of the biggest time users, and that is by design. For most teenagers, 8–10 hours of sleep a night supports physical health, learning, and mood.";
+
+          if (nonSleep.length > 0) {
+            const flexibleCandidates = sortedByLifetime.filter(function (x) { return FLEXIBLE_CATEGORIES.has(x.category); });
+            const candidate = flexibleCandidates[0] || nonSleep[0];
+            const cutMinutes = 20;
+            const savedYears = (cutMinutes * a.remainingYears) / (60 * 24);
+            suggestion += " This tool focuses change ideas on flexible time like screens, leisure, or chores—not sleep. If you spent " + cutMinutes + " fewer minutes on " + candidate.name + " each day, you could get back about " + savedYears.toFixed(2) + " years.";
+          }
+
+          summarySuggestion.textContent = suggestion;
+
+          sortedByLifetime.slice(0, 3).forEach(function (e) {
+            const chip = document.createElement("span");
+            chip.className = "yl24-chip";
+            chip.textContent = e.name + ": " + e.lifetimeYears.toFixed(2) + " yrs";
+            summaryChips.appendChild(chip);
+          });
+
+          buildChart(enriched);
+        }
+
+        function runTests() {
+          if (!window.__YL24_TEST__) return;
+          if (MINUTES_PER_DAY !== 1440) throw new Error("MINUTES_PER_DAY");
+          if (!CATEGORY_OPTIONS.includes("Sleep")) throw new Error("CATEGORY_OPTIONS");
+          if (hoursToMinutes(1.5) !== 90) throw new Error("HOURS_TO_MINUTES_1_5");
+          if (hoursToMinutes("2") !== 120) throw new Error("HOURS_TO_MINUTES_2");
+          if (hoursToMinutes("-1") !== null) throw new Error("HOURS_TO_MINUTES_NEG");
+          if (minutesToHours(90) !== 1.5) throw new Error("MINUTES_TO_HOURS_90");
+          if (minutesToHours("-5") !== null) throw new Error("MINUTES_TO_HOURS_NEG");
+          const hm = formatHM(145);
+          if (hm.h !== 2 || hm.m !== 25) throw new Error("FORMAT_HM");
+        }
+
+        if (startBtn && introCard) startBtn.addEventListener("click", function () {
+          introCard.style.display = "none";
+          startGuide();
+        });
+
+        if (skipIntroBtn && introCard) skipIntroBtn.addEventListener("click", function () {
+          introCard.style.display = "none";
+          try { localStorage.setItem("yl24_guided_dismissed", "1"); } catch (e) {}
+        });
+
+        document.querySelectorAll('[data-yl24-guided="1"]').forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            if (introCard) introCard.style.display = "none";
+            startGuide();
+          });
+        });
+
+        if (guideExit) guideExit.addEventListener("click", hideGuide);
+        if (guideBack) guideBack.addEventListener("click", guideBackStep);
+        if (guideNext) guideNext.addEventListener("click", guideNextStep);
+
+        if (guideModal) {
+          guideModal.addEventListener("click", function (e) {
+            if (e.target === guideModal) hideGuide();
+          });
+        }
+
+        if (qaHours) {
+          qaHours.addEventListener("input", function () {
+            updateQuickAddMinutes();
+          });
+        }
+
+        if (guideHours) guideHours.addEventListener("input", updateGuideMinutes);
+
+        if (qaCancel) qaCancel.addEventListener("click", hideQuickAdd);
+        if (qaModal) {
+          qaModal.addEventListener("click", function (e) {
+            if (e.target === qaModal) hideQuickAdd();
+          });
+        }
+
+        if (qaSave) qaSave.addEventListener("click", function () {
+          if (!qaState) return;
+          const mins = parseFloat(qaMinutes.value);
+          if (isNaN(mins) || mins <= 0) return;
+          addOrUpdateActivityByName(qaState.name, qaState.category, mins);
+          hideQuickAdd();
+        });
+
+        if (addRowBtn) addRowBtn.addEventListener("click", function () {
+          activitiesBody.appendChild(createActivityRow("", "Other", ""));
+          recalc();
+        });
+
+        if (loadDefaultsBtn) loadDefaultsBtn.addEventListener("click", function () {
+          loadDefaults();
+          recalc();
+        });
+
+        if (clearAllBtn) clearAllBtn.addEventListener("click", function () {
+          clearActivities();
+          activitiesBody.appendChild(createActivityRow("", "Other", ""));
+          recalc();
+        });
+
+        if (ageInput) ageInput.addEventListener("input", function () {
+          updateAgeLine();
+          recalc();
+        });
+
+        if (lifespanInput) lifespanInput.addEventListener("input", function () {
+          updateAgeLine();
+          recalc();
+        });
+
+        if (baselineSelect) baselineSelect.addEventListener("change", recalc);
+
+        if (emailBtn) emailBtn.addEventListener("click", function () {
+          const subject = encodeURIComponent("Your Life in 24 Hours – Summary");
+          const body = buildEmailBody();
+          window.location.href = "mailto:?subject=" + subject + "&body=" + body;
+        });
+
+        if (copyBtn) copyBtn.addEventListener("click", function () {
+          const text = buildCopySummaryText();
+          if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).catch(function () {
+              alert("Copy failed. You can select and copy text manually.");
+            });
+          } else {
+            alert("Copy is not available in this browser. You can select and copy text manually.");
+          }
+        });
+
+        if (promptSleepBtn) promptSleepBtn.addEventListener("click", function () {
+          showQuickAdd("Sleep", "How many hours do you sleep per night?", 8, "Sleep", "Sleep");
+        });
+
+        if (promptSchoolBtn) promptSchoolBtn.addEventListener("click", function () {
+          showQuickAdd("School", "How many hours are you in school/work per day?", 7, "School / classes", "School/Work");
+        });
+
+        if (promptSocialBtn) promptSocialBtn.addEventListener("click", function () {
+          showQuickAdd("Social", "How many hours on social media per day?", 1.5, "Social media", "Screen/Leisure");
+        });
+
+        if (promptGamingBtn) promptGamingBtn.addEventListener("click", function () {
+          showQuickAdd("Gaming", "How many hours gaming/YouTube per day?", 1.5, "Gaming / YouTube", "Screen/Leisure");
+        });
+
+        if (promptHygieneBtn) promptHygieneBtn.addEventListener("click", function () {
+          showQuickAdd("Hygiene", "How many hours on hygiene/getting ready per day?", 0.75, "Getting ready", "Hygiene/Personal care");
+        });
+
+        if (promptMealsBtn) promptMealsBtn.addEventListener("click", function () {
+          showQuickAdd("Meals", "How many hours eating meals/snacks per day?", 1.5, "Meals", "Meals");
+        });
+
+        clearActivities();
+        activitiesBody.appendChild(createActivityRow("", "Other", ""));
+
+        updateAgeLine();
+        if (baselineNote) baselineNote.textContent = BASELINES["student-weekday"].note;
+        recalc();
+        runTests();
+
+        try {
+          const dismissed = localStorage.getItem("yl24_guided_dismissed") === "1";
+          if (!dismissed) {
+            if (introCard) introCard.style.display = "none";
+            startGuide();
+          }
+        } catch (e) {
+          if (introCard) introCard.style.display = "none";
+          startGuide();
+        }
+      }
+
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    })();
+  </script>
+</body>
+</html>
+</div>
+</div>
+</div>
+<div class="btf c85">
+</div>
+<script>var lwi=-1;function thresholdPassed(){var w=document.documentElement.clientWidth;var p=false;var cw=0;if(w>=480){cw++;}if(w>=768){cw++;}if(w>=960){cw++;}if(w>=1200){cw++;}if(lwi!=cw){p=true;}lwi=cw;return p;}!function(){if("Promise"in window&&void 0!==window.performance){var e,t,r=document,n=function(){return r.createElement("link")},o=new Set,a=n(),i=a.relList&&a.relList.supports&&a.relList.supports("prefetch"),s=location.href.replace(/#[^#]+$/,"");o.add(s);var c=function(e){var t=location,r="http:",n="https:";if(e&&e.href&&e.origin==t.origin&&[r,n].includes(e.protocol)&&(e.protocol!=r||t.protocol!=n)){var o=e.pathname;if(!(e.hash&&o+e.search==t.pathname+t.search||"?preload=no"==e.search.substr(-11)||".html"!=o.substr(-5)&&".html"!=o.substr(-5)&&"/"!=o.substr(-1)))return!0}},u=function(e){var t=e.replace(/#[^#]+$/,"");if(!o.has(t)){if(i){var a=n();a.rel="prefetch",a.href=t,r.head.appendChild(a)}else{var s=new XMLHttpRequest;s.open("GET",t,s.withCredentials=!0),s.send()}o.add(t)}},p=function(e){return e.target.closest("a")},f=function(t){var r=t.relatedTarget;r&&p(t)==r.closest("a")||e&&(clearTimeout(e),e=void 0)},d={capture:!0,passive:!0};r.addEventListener("touchstart",function(e){t=performance.now();var r=p(e);c(r)&&u(r.href)},d),r.addEventListener("mouseover",function(r){if(!(performance.now()-t<1200)){var n=p(r);c(n)&&(n.addEventListener("mouseout",f,{passive:!0}),e=setTimeout(function(){u(n.href),e=void 0},80))}},d)}}();dpth="/";!function(){var e={},t={},n={};window.ld=function(a,r,o){var c=function(){"interactive"==document.readyState?(r&&r(),document.addEventListener("readystatechange",function(){"complete"==document.readyState&&o&&o()})):"complete"==document.readyState?(r&&r(),o&&o()):document.addEventListener("readystatechange",function(){"interactive"==document.readyState&&r&&r(),"complete"==document.readyState&&o&&o()})},d=(1<<a.length)-1,u=0,i=function(r){var o=a[r],i=function(){for(var t=0;t<a.length;t++){var r=(1<<t)-1;if((u&r)==r&&n[a[t]]){if(!e[a[t]]){var o=document.createElement("script");o.textContent=n[a[t]],document.body.appendChild(o),e[a[t]]=!0}if((u|=1<<t)==d)return c(),0}}return 1};if(null==t[o]){t[o]=[];var f=new XMLHttpRequest;f.open("GET",o,!0),f.onload=function(){n[o]=f.responseText,[].forEach.call(t[o],function(e){e()})},t[o].push(i),f.send()}else{if(e[o])return i();t[o].push(i)}return 1};if(a.length)for(var f=0;f<a.length&&i(f);f++);else c()}}();ld([],function(){!function(){var e=document.querySelectorAll('a[href^="#"]:not(.noConsent):not(.denyConsent):not(.removeConsent):not(.allowConsent):not(.allowSelectedConsent)');[].forEach.call(e,function(c){var e=navigator.userAgent,m=/chrome/i.test(e),p=/firefox/i.test(e),d=/iPad|iPhone|iPod/.test(e)&&!window.MSStream||"MacIntel"===navigator.platform&&1<navigator.maxTouchPoints;c.addEventListener("click",function(e){var a,o,t=!1,n=document.body.parentNode,r=(d&&"none"!=getComputedStyle(n).getPropertyValue("scroll-snap-type")&&(n.setAttribute("data-snap",n.style.scrollSnapType),n.style.scrollSnapType="none",t=!0),0);if(1<c.hash.length){var n=parseFloat(getComputedStyle(document.body).getPropertyValue("zoom")),s=(!p&&n||(n=1),c.hash.slice(1)),i=document.getElementById(s);if(null===i&&null===(i=document.querySelector('[name="'+s+'"]')))return;r=m?i.getBoundingClientRect().top*n+pageYOffset:(i.getBoundingClientRect().top+pageYOffset)*n}else if(t)for(var l=document.querySelectorAll("[data-block-group]"),u=0;u<l.length;u++)if("none"!=getComputedStyle(l[u]).getPropertyValue("scroll-snap-align")){i=l[u];break}t?window.smoothScroll(e,i,1):"scrollBehavior"in document.documentElement.style?scroll({top:r,left:0,behavior:"smooth"}):"requestAnimationFrame"in window?(a=pageYOffset,o=null,requestAnimationFrame(function e(t){t=(t-(o=o||t))/400;scrollTo(0,a<r?(r-a)*t+a:a-(a-r)*t),t<1?requestAnimationFrame(e):scrollTo(0,r)})):scrollTo(0,r),e.preventDefault()},!1)})}(),window.smoothScroll=function(e,a,o,n){e.stopImmediatePropagation();var r=pageYOffset,e=a?(a="string"==typeof a||a instanceof String?document.querySelector(a):a).getBoundingClientRect().top:-r,t=navigator.userAgent,s=/chrome/i.test(t),t=/firefox/i.test(t),i=parseFloat(getComputedStyle(document.body).getPropertyValue("zoom")),l=e*(i=!t&&i?i:1)+(s?0:r*(i-1)),u=null;function c(){m((window.performance.now?window.performance:Date).now())}function m(e){var e=(e-(u=null===u?e:u))/1e3,t=function(e,t,a){switch(n){case"linear":break;case"easeInQuad":e*=e;break;case"easeOutQuad":e=1-(1-e)*(1-e);break;case"easeInCubic":e*=e*e;break;case"easeOutCubic":e=1-Math.pow(1-e,3);break;case"easeInOutCubic":e=e<.5?4*e*e*e:1-Math.pow(-2*e+2,3)/2;break;case"easeInQuart":e*=e*e*e;break;case"easeOutQuart":e=1-Math.pow(1-e,4);break;case"easeInOutQuart":e=e<.5?8*e*e*e*e:1-Math.pow(-2*e+2,4)/2;break;case"easeInQuint":e*=e*e*e*e;break;case"easeOutQuint":e=1-Math.pow(1-e,5);break;case"easeInOutQuint":e=e<.5?16*e*e*e*e*e:1-Math.pow(-2*e+2,5)/2;break;case"easeInCirc":e=1-Math.sqrt(1-Math.pow(e,2));break;case"easeOutCirc":e=Math.sqrt(1-Math.pow(1-e,2));break;case"easeInOutCirc":e=e<.5?(1-Math.sqrt(1-Math.pow(2*e,2)))/2:(Math.sqrt(1-Math.pow(-2*e+2,2))+1)/2;break;default:e=e<.5?2*e*e:1-Math.pow(-2*e+2,2)/2}1<e&&(e=1);return t+a*e}(e/o,r,l);window.scrollTo(0,t),e<o?"requestAnimationFrame"in window?requestAnimationFrame(m):setTimeout(c,1e3/120):(/iPad|iPhone|iPod/.test(navigator.userAgent)&&!window.MSStream||"MacIntel"===navigator.platform&&1<navigator.maxTouchPoints)&&(a&&a.scrollIntoView(),setTimeout(function(){var e=document.body.parentNode;e.style.scrollSnapType=e.getAttribute("data-snap"),e.removeAttribute("data-snap")},100))}return"requestAnimationFrame"in window?requestAnimationFrame(m):setTimeout(c,1e3/120),!1};!function(){var e=null;if(location.hash){var t=location.hash.replace("#",""),n=function(){var o=document.getElementById(t);null===o&&(o=document.querySelector('[name="'+t+'"]')),o&&o.scrollIntoView(!0),"0px"===window.getComputedStyle(document.body).getPropertyValue("min-width")?setTimeout(n,100):null!=e&&setTimeout(e,100)};n()}else null!=e&&e()}();});ld(["js/menu.30f1c9.js","js/menu-dropdown-animations.30f1c9.js","js/menu-dropdown.339c38.js","js/menu-dropdown-1.339c38.js"],function(){initMenu(document.querySelector('#m10'));});ld(["js/woolite.30f1c9.js"],function(){wl.addAnimation('.un171',"0.50s","0.00s",1,100);wl.addAnimation('.un172',"0.50s","0.00s",1,100);wl.addAnimation('.un173',"0.50s","0.00s",1,100);wl.start();});</script>
+</body>
+</html>
